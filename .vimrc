@@ -122,3 +122,5 @@ nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <C-p> :Files<CR>
 nnoremap <leader>rg :Rg<CR>
+
+command Todo noautocmd vimgrep /TODO\|FIXME/j ** | cw
