@@ -121,3 +121,6 @@ source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # disable special creation/extraction of ._* files by tar, etc. on Mac OS X
 COPYFILE_DISABLE=1; export COPYFILE_DISABLE
 export PATH="/usr/local/sbin:$PATH"
+
+#iterm shell integration
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
