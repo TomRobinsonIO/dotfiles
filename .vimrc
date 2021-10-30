@@ -3,6 +3,8 @@ call plug#begin('~/.vim/plugged')
 " Theme for status bar
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+" Theme for Vim
+Plug 'joshdick/onedark.vim'
 " File browser extensions
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
