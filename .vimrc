@@ -18,6 +18,7 @@ Plug 'ycm-core/YouCompleteMe'
 Plug 'jiangmiao/auto-pairs'
 Plug 'sheerun/vim-polyglot'
 Plug 'Vimjas/vim-python-pep8-indent'
+" Code Lint Engine. You must install linters (e.g. flake8, pylint) for this to work.
 Plug 'dense-analysis/ale'
 
 call plug#end()
