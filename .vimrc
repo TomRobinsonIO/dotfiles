@@ -116,11 +116,23 @@ autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_
 au BufNewFile,BufRead *.py 
   \ set foldmethod=indent
 
+" Disable VI compatibility to enable features
+set nocompatible
+" Set theme for VIM
 colorscheme nord
+" Enable syntax highlighting
 syntax on
+" Enable line numbering
 set number
+" Enable spell checking
 set spell
+" Disable case sensitivity
 set smartcase
+" Search down into subfolders
+" Provides tab-completion for all file-related tasks
+set path+=**
+" Display all matching files when using tab complete
+set wildmenu
 " highlight Normal ctermbg=None
 highlight LineNr ctermfg=DarkGrey
 
