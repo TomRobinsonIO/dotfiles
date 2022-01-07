@@ -5,6 +5,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Theme for Vim
 Plug 'joshdick/onedark.vim'
+Plug 'arcticicestudio/nord-vim'
 " File browser extensions
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -113,7 +114,7 @@ autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_
 au BufNewFile,BufRead *.py 
   \ set foldmethod=indent
 
-colorscheme onedark
+colorscheme nord
 syntax on
 set number
 set spell
