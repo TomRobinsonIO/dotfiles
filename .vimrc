@@ -16,6 +16,8 @@ Plug 'nvim-lua/plenary.nvim'
 if has('nvim')
   Plug 'nvim-telescope/telescope.nvim'
 endif
+"Provides mappings to easily delete, change and add such surroundings in pairs.
+Plug 'tpope/vim-surround'
 " Comment out line using gcc
 Plug 'tpope/vim-commentary'
 " Auto formatting, auto complete, code syntax
