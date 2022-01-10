@@ -119,6 +119,8 @@ autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_
 au BufNewFile,BufRead *.py 
   \ set foldmethod=indent
 
+" Set relative line numbering
+set relativenumber
 " Disable VI compatibility to enable features
 set nocompatible
 " Set theme for VIM
