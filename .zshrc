@@ -1,3 +1,10 @@
+# Set Neovim as MANPAGER
+export MANPAGER='nvim +Man!'
+
+# Set bat as MANPAGER
+# export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export BAT_THEME="Nord"
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
