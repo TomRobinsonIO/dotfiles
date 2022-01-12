@@ -5,6 +5,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Theme for Vim
 Plug 'joshdick/onedark.vim'
+Plug 'morhetz/gruvbox'
 Plug 'arcticicestudio/nord-vim'
 " File browser extensions
 Plug 'scrooloose/nerdtree'
@@ -126,7 +127,7 @@ set relativenumber
 " Disable VI compatibility to enable features
 set nocompatible
 " Set theme for VIM
-colorscheme nord
+colorscheme gruvbox
 " Enable syntax highlighting
 syntax on
 " Enable line numbering
