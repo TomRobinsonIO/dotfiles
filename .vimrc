@@ -151,6 +151,10 @@ nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <C-p> :Files<CR>
 nnoremap <leader>rg :Rg<CR>
+nnoremap <leader>h :wincmd h<CR>
+nnoremap <leader>j :wincmd j<CR>
+nnoremap <leader>k :wincmd k<CR>
+nnoremap <leader>l :wincmd l<CR>
 " Find files using Telescope command-line sugar.
 if has('nvim')
   nnoremap <leader>ff <cmd>Telescope find_files hidden=true<cr>
