@@ -143,6 +143,8 @@ set path+=**
 set wildmenu
 " highlight Normal ctermbg=None
 highlight LineNr ctermfg=DarkGrey
+" Highlights search matches while typing
+set incsearch 
 
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTreeToggle<CR>
