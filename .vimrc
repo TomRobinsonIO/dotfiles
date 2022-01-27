@@ -146,6 +146,7 @@ highlight LineNr ctermfg=DarkGrey
 " Highlights search matches while typing
 set incsearch 
 
+let mapleader = " "
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <C-p> :Files<CR>
