@@ -128,6 +128,7 @@ set relativenumber
 set nocompatible
 " Set theme for VIM
 colorscheme gruvbox
+set termguicolors
 " Enable syntax highlighting
 syntax on
 " Enable line numbering
