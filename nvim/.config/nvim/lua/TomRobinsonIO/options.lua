@@ -20,8 +20,7 @@ o.wildmenu = true                 -- Enables "enhanced mode" of command-line com
 o.incsearch = true                -- While typing a search command, show where the pattern, as it was typed so far, matches
 o.wrap = false                    -- Display lines as one long line
 
-g["gruvbox_material_palette"] = "original"
-g["gruvbox_material_palette"] = "hard"
+g["gruvbox_material_palette"] = "mix"
 
 c "colorscheme gruvbox-material"  -- This is the way
 c "highlight Normal guibg=none"   -- Transparent background
