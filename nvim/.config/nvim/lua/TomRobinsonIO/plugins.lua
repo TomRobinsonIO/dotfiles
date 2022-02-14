@@ -58,6 +58,7 @@ return packer.startup(function(use)
     use  "folke/todo-comments.nvim" --highlight and search for todo comments like TODO, HACK, BUG in your code base
 
     -- Colorschemes
+    use "sainnhe/gruvbox-material"
     use "gruvbox-community/gruvbox" -- This is the way
     use "joshdick/onedark.vim"
 

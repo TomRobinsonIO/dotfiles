@@ -1,7 +1,8 @@
 local o = vim.opt
 local c = vim.cmd
+local g = vim.g
 
-o.showmode = false                        -- we don't need to see things like -- INSERT -- anymore
+o.showmode = false                -- we don't need to see things like -- INSERT -- anymore
 o.relativenumber = true           -- Show the line number relative to the line with the cursor
 o.number = true                   -- Show line numbering for current line
 o.signcolumn = 'yes'              -- Always show sign column for warnings, errors, etc.
@@ -19,8 +20,11 @@ o.wildmenu = true                 -- Enables "enhanced mode" of command-line com
 o.incsearch = true                -- While typing a search command, show where the pattern, as it was typed so far, matches
 o.wrap = false                    -- Display lines as one long line
 
+g["gruvbox_material_palette"] = "original"
+g["gruvbox_material_palette"] = "hard"
+
+c "colorscheme gruvbox-material"  -- This is the way
+c "highlight Normal guibg=none"   -- Transparent background
 c "set path+=**"                  -- Set path to include subfolders
 c "set nohlsearch"                -- Turn of highlighting when search is done
 c "set guicursor="                -- Don't change cursor when entering insert mode
-c "colorscheme gruvbox"           -- This is the way
-c "highlight Normal guibg=none"   -- Transparent background
