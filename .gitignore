@@ -1,0 +1,4 @@
+# Compiled Lua sources
+luac.out
+
+nvim/.config/nvim/plugin/packer_compiled.lua
