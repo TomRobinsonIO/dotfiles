@@ -5,3 +5,4 @@ end
 
 require "TomRobinsonIO.lsp.lsp-installer"
 require("TomRobinsonIO.lsp.handlers").setup()
+require "TomRobinsonIO.lsp.null-ls"
