@@ -5,18 +5,13 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Theme for Vim
 Plug 'joshdick/onedark.vim'
-Plug 'morhetz/gruvbox'
+Plug 'gruvbox-community/gruvbox'
 Plug 'arcticicestudio/nord-vim'
 " File browser extensions
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-rooter'
-Plug 'nvim-lua/plenary.nvim'
-" Fuzzy Finder for neovim
-if has('nvim')
-  Plug 'nvim-telescope/telescope.nvim'
-endif
 "Provides mappings to easily delete, change and add such surroundings in pairs.
 Plug 'tpope/vim-surround'
 " Comment out line using gcc
@@ -38,8 +33,6 @@ let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 let g:ale_linters = {
       \   'python': ['flake8', 'pylint'],
-      \   'ruby': ['standardrb', 'rubocop'],
-      \   'javascript': ['eslint'],
       \}
 function! LinterStatus() abort
   let l:counts = ale#statusline#Count(bufnr(''))
@@ -126,9 +119,6 @@ au BufNewFile,BufRead *.py
 set relativenumber
 " Disable VI compatibility to enable features
 set nocompatible
-" Set theme for VIM
-colorscheme gruvbox
-set termguicolors
 " Enable syntax highlighting
 syntax on
 " Enable line numbering
@@ -143,9 +133,20 @@ set path+=**
 " Display all matching files when using tab complete
 set wildmenu
 " highlight Normal ctermbg=None
-highlight LineNr ctermfg=DarkGrey
+highlight Normal ctermfg=DarkGrey
 " Highlights search matches while typing
 set incsearch 
+set nohlsearch
+set ignorecase
+set scrolloff=8
+set sidescrolloff=8
+set nowrap
+set expandtab
+set nosmd
+" Set theme for VIM
+set termguicolors
+colorscheme gruvbox
+
 
 let mapleader = " "
 nnoremap <leader>n :NERDTreeFocus<CR>
@@ -156,11 +157,4 @@ nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
-" Find files using Telescope command-line sugar.
-if has('nvim')
-  nnoremap <leader>ff <cmd>Telescope find_files hidden=true<cr>
-  nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-  nnoremap <leader>fb <cmd>Telescope buffers<cr>
-  nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-endif
 command Todo noautocmd vimgrep /TODO\|FIXME/j ** | cw
