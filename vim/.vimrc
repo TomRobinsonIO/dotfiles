@@ -138,11 +138,15 @@ highlight Normal ctermfg=DarkGrey
 set incsearch 
 set nohlsearch
 set ignorecase
+" scroll before hitting the bottom
 set scrolloff=8
 set sidescrolloff=8
 set nowrap
 set expandtab
+" Don't show current mode (handled by airline)
 set nosmd
+" Always show signcolumn
+set signcolumn=yes
 " Set theme for VIM
 set termguicolors
 if &term =~# '^screen'
