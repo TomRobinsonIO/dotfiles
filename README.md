@@ -6,7 +6,7 @@ MacOS Config Files
 | Type                  | Name                     |
 |-----------------------|--------------------------|
 | OS                    | MacOS                    |
-| Terminal              | iTerm2                   |
+| Terminal              | Alacritty                |
 | Colorscheme           | Gruvbox                  |
 | Terminal Emulator     | tmux                     |
 | Editor                | Neovim                   |
