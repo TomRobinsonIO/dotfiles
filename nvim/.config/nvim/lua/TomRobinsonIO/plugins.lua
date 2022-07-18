@@ -51,6 +51,7 @@ return packer.startup(function(use)
     use "nvim-telescope/telescope-fzy-native.nvim"
     use "SmiteshP/nvim-gps"
     use "tpope/vim-surround" -- Add/Edit surrounding pairs
+    use "tpope/vim-fugitive" -- Vim Git itigrations
     use "tpope/vim-commentary" -- Comment lines with gcc
     use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
     use "rcarriga/nvim-notify" -- A fancy, configurable, notification manager for Neovim
