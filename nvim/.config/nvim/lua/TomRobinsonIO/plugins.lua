@@ -56,12 +56,13 @@ return packer.startup(function(use)
     use "tpope/vim-commentary" -- Comment lines with gcc
     use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
     use "rcarriga/nvim-notify" -- A fancy, configurable, notification manager for Neovim
-    use  "folke/todo-comments.nvim" --highlight and search for todo comments like TODO, HACK, BUG in your code base
+    use "folke/todo-comments.nvim" --highlight and search for todo comments like TODO, HACK, BUG in your code base
 
     -- Colorschemes
     use "sainnhe/gruvbox-material"
     use "joshdick/onedark.vim"
     use "Mofiqul/dracula.nvim"
+    use "shaunsingh/nord.nvim"
 
     -- cmp plugins
     use "hrsh7th/nvim-cmp" -- The completion plugin
