@@ -27,7 +27,7 @@ g["gruvbox_material_transparent_background"] = 1
 c "set path+=**"                  -- Set path to include subfolders
 c "set nohlsearch"                -- Turn of highlighting when search is done
 c "set guicursor="                -- Don't change cursor when entering insert mode
-c "set colorcolumn=80"            -- Set line limit indicator for Python
 c "colorscheme gruvbox-material"  -- This is the way
+-- c "colorscheme dracula"        -- Spooky
 c "highlight Normal guibg=none"   -- Transparent background
 c "highlight ColorColumn guibg=lightgrey"   -- Set line limit indicator color to lightgrey

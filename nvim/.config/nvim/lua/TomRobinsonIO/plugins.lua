@@ -46,11 +46,11 @@ return packer.startup(function(use)
     use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
     use "nvim-lualine/lualine.nvim" -- Status Line for Neovim
     use "kyazdani42/nvim-web-devicons"
-    use "airblade/vim-rooter" -- Root to CDW
+    use "airblade/vim-rooter" -- Root to CWD
     use "nvim-telescope/telescope.nvim"
     use "nvim-telescope/telescope-fzy-native.nvim"
     use "SmiteshP/nvim-gps"
-    use "tpope/vim-surround" -- Add/Edit surrounding pairs
+    use "kylechui/nvim-surround" -- Add/Edit surrounding pairs
     use "tpope/vim-fugitive" -- Vim Git itigrations
     use "tpope/vim-rhubarb" -- Vim Git browser
     use "tpope/vim-commentary" -- Comment lines with gcc
@@ -60,8 +60,8 @@ return packer.startup(function(use)
 
     -- Colorschemes
     use "sainnhe/gruvbox-material"
-    use "gruvbox-community/gruvbox" -- This is the way
     use "joshdick/onedark.vim"
+    use "Mofiqul/dracula.nvim"
 
     -- cmp plugins
     use "hrsh7th/nvim-cmp" -- The completion plugin
