@@ -8,7 +8,7 @@ MacOS Config Files
 | OS                    | MacOS                    |
 | Terminal              | Alacritty                |
 | Colorscheme           | Gruvbox                  |
-| Terminal Emulator     | tmux                     |
+| Terminal Multiplexer  | tmux                     |
 | Editor                | Neovim                   |
 | Shell                 | zsh                      |
 | Font                  | JetBrains Mono Nerd Font |
