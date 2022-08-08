@@ -1,8 +1,8 @@
 import:
 # Import a Colorscheme file.
-  - ~/dotfiles/alacritty/.config/alacritty/gruvbox.yml
+  # - ~/dotfiles/alacritty/.config/alacritty/gruvbox.yml
   # - ~/dotfiles/alacritty/.config/alacritty/nord.yml
-  # - ~/dotfiles/alacritty/.config/alacritty/dracula.yml
+  - ~/dotfiles/alacritty/.config/alacritty/dracula.yml
 
 font:
   normal:
