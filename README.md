@@ -7,7 +7,7 @@ MacOS Config Files
 |-----------------------|--------------------------|
 | OS                    | MacOS                    |
 | Terminal              | Alacritty                |
-| Colorscheme           | Gruvbox                  |
+| Colorscheme           | Dracula                  |
 | Terminal Multiplexer  | tmux                     |
 | Editor                | Neovim                   |
 | Shell                 | zsh                      |
