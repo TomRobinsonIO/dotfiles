@@ -3,7 +3,13 @@ export MANPAGER='nvim +Man!'
 
 # Set bat as MANPAGER
 # export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-export BAT_THEME="Dracula"
+export BAT_THEME="Catppuccin-mocha"
+
+#Catpuccin for fzf
+export FZF_DEFAULT_OPTS=" \
+--color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
+--color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
+--color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -18,6 +24,8 @@ fi
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+# Path to Catppuccin theme files
+export catppuccin="$HOME/.Catppuccin"
 # Path to Dracula theme files
 export dracula="$HOME/.Dracula"
 # Set name of the theme to load --- if set to "random", it will
@@ -82,8 +90,11 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 
+# Catpuccin zsh-syntax-highlighting settings.
+source $catppuccin/zsh-syntax-highlighting/catppuccin-zsh-syntax-highlighting.zsh
+
 # Dracula zsh-syntax-highlighting settings.
-source $dracula/zsh-syntax-highlighting/zsh-syntax-highlighting.sh
+# source $dracula/zsh-syntax-highlighting/zsh-syntax-highlighting.sh
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
