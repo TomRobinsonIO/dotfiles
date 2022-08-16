@@ -46,6 +46,7 @@ return packer.startup(function(use)
     use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
     use "nvim-lualine/lualine.nvim" -- Status Line for Neovim
     use "kyazdani42/nvim-web-devicons"
+    use "kyazdani42/nvim-tree.lua" -- File Explorer for Neovim
     use "airblade/vim-rooter" -- Root to CWD
     use "nvim-telescope/telescope.nvim"
     use "nvim-telescope/telescope-fzy-native.nvim"

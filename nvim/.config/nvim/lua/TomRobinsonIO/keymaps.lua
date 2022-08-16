@@ -29,7 +29,10 @@ keymap("n", "<leader><Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<leader><Right>", ":vertical resize +2<CR>", opts)
 
 -- Open NetRW to the left
-keymap("n", "<leader>n", ":Lex 15<cr>", opts)
+-- keymap("n", "<leader>n", ":Lex 15<cr>", opts)
+
+-- Open Nvim-Tree to the left
+keymap("n", "<leader>n", ":NvimTreeToggle<CR>", opts)
 
 -- Telescope Maps
 keymap("n", "<leader>ff", ":Telescope find_files hidden=true<cr>", opts)
