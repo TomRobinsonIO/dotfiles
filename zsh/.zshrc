@@ -131,7 +131,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-. `brew --prefix`/etc/profile.d/z.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -141,13 +140,26 @@ source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighti
   export GUILE_LOAD_COMPILED_PATH="/usr/local/lib/guile/3.0/site-ccache"
   export GUILE_SYSTEM_EXTENSIONS_PATH="/usr/local/lib/guile/3.0/extensions"
 
-# disable special creation/extraction of ._* files by tar, etc. on Mac OS X
-COPYFILE_DISABLE=1; export COPYFILE_DISABLE
 export PATH="/usr/local/sbin:$PATH"
 
-#iterm shell integration
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
 
-#nvm for node version management
-  export NVM_DIR="$HOME/.nvm"
-  source $(brew --prefix nvm)/nvm.sh #This loads nvm
+case `uname` in
+  Darwin)
+    # commands for OS X go here
+    . `brew --prefix`/etc/profile.d/z.sh
+    # disable special creation/extraction of ._* files by tar, etc. on Mac OS X
+    COPYFILE_DISABLE=1; export COPYFILE_DISABLE
+    #iterm shell integration
+    test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
+    #nvm for node version management
+      export NVM_DIR="$HOME/.nvm"
+      source $(brew --prefix nvm)/nvm.sh #This loads nvm
+  ;;
+  Linux)
+    # commands for Linux go here
+    . /usr/share/z/z.sh
+  ;;
+  FreeBSD)
+    # commands for FreeBSD go here
+  ;;
+esac
