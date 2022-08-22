@@ -158,6 +158,9 @@ case `uname` in
   Linux)
     # commands for Linux go here
     . /usr/share/z/z.sh
+    #default editor
+    SUDO_EDITOR=/usr/bin/nvim
+    export SUDO_EDITOR
   ;;
   FreeBSD)
     # commands for FreeBSD go here
