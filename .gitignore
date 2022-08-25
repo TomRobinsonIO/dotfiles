@@ -3,3 +3,9 @@ luac.out
 
 nvim/.config/nvim/plugin/packer_compiled.lua
 .DS_Store
+
+joplin/.config/joplin/cache/
+joplin/.config/joplin/resources/
+joplin/.config/joplin/tmp/
+*.sqlite
+log.txt
