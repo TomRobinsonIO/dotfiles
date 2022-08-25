@@ -1,14 +1,14 @@
 # dotfiles
-MacOS Config Files
+MacOS and Arch Config Files
 
 ## Packages
 
 | Type                  | Name                     |
 |-----------------------|--------------------------|
-| OS                    | MacOS                    |
+| OS                    | MacOS/Arch               |
+| Shell                 | zsh                      |
 | Terminal              | Alacritty                |
-| Colorscheme           | Dracula                  |
 | Terminal Multiplexer  | tmux                     |
 | Editor                | Neovim                   |
-| Shell                 | zsh                      |
+| Colorscheme           | Catppuccin               |
 | Font                  | JetBrains Mono Nerd Font |
