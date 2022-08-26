@@ -140,20 +140,27 @@ source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighti
   export GUILE_LOAD_COMPILED_PATH="/usr/local/lib/guile/3.0/site-ccache"
   export GUILE_SYSTEM_EXTENSIONS_PATH="/usr/local/lib/guile/3.0/extensions"
 
-export PATH="/usr/local/sbin:$PATH:/home/tom/.local/bin"
+export PATH="/usr/local/sbin:$PATH:$HOME/.local/bin"
 
 
 case `uname` in
   Darwin)
     # commands for OS X go here
+
+    #Enable z - Jump Around
     . `brew --prefix`/etc/profile.d/z.sh
+
     # disable special creation/extraction of ._* files by tar, etc. on Mac OS X
     COPYFILE_DISABLE=1; export COPYFILE_DISABLE
+
     #iterm shell integration
     test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
+
+    alias sudoedit="sudo nvim"
+
     #nvm for node version management
-      export NVM_DIR="$HOME/.nvm"
-      source $(brew --prefix nvm)/nvm.sh #This loads nvm
+    export NVM_DIR="$HOME/.nvm"
+    source $(brew --prefix nvm)/nvm.sh #This loads nvm
   ;;
   Linux)
     # commands for Linux go here
