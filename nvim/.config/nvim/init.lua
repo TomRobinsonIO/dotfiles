@@ -1,5 +1,6 @@
 require ("TomRobinsonIO.plugins")
 require ("TomRobinsonIO.options")
+require ("TomRobinsonIO.autocommands")
 require ("TomRobinsonIO.keymaps")
 require ("TomRobinsonIO.lsp")
 require ("TomRobinsonIO.cmp")
