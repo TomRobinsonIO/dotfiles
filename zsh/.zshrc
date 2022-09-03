@@ -165,9 +165,13 @@ case `uname` in
   Linux)
     # commands for Linux go here
     . /usr/share/z/z.sh
+
     #default editor
     SUDO_EDITOR=/usr/bin/nvim
     export SUDO_EDITOR
+
+    #nvm for node version management
+    source /usr/share/nvm/init-nvm.sh
   ;;
   FreeBSD)
     # commands for FreeBSD go here
