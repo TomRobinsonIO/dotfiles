@@ -41,7 +41,6 @@ source $ZSH/oh-my-zsh.sh
   export GUILE_LOAD_COMPILED_PATH="/usr/local/lib/guile/3.0/site-ccache"
   export GUILE_SYSTEM_EXTENSIONS_PATH="/usr/local/lib/guile/3.0/extensions"
 
-export PATH="/usr/local/sbin:$PATH:$HOME/.local/bin"
 
 #Bat Themes
 export BAT_THEME="Catppuccin-mocha"
@@ -82,6 +81,9 @@ case `uname` in
     #default editor
     SUDO_EDITOR=/usr/bin/nvim
     export SUDO_EDITOR
+    
+    #Java
+    export JAVA_HOME="/usr/lib/jvm/java-18-openjdk"
 
     #nvm for node version management
     source /usr/share/nvm/init-nvm.sh
@@ -90,3 +92,5 @@ case `uname` in
     # commands for FreeBSD go here
   ;;
 esac
+
+export PATH="/usr/local/sbin:$PATH:$HOME/.local/bin:$JAVA_HOME/bin"
