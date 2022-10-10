@@ -9,3 +9,5 @@ joplin-desktop/.config/joplin-desktop/resources/
 joplin-desktop/.config/joplin-desktop/tmp/
 *.sqlite
 log.txt
+
+lf/.config/lf/shortcutrc
