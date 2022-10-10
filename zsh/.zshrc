@@ -58,7 +58,8 @@ export FZF_DEFAULT_OPTS=" \
 source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Use rapper script for lf to allow image previews
-alias lf='$HOME/.local/bin/lfub'
+alias lf='lfub'
+
 # Use lf to switch directories and bind it to ctrl-o
 lfcd () {
     tmp="$(mktemp -uq)"
