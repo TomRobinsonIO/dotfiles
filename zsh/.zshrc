@@ -1,6 +1,9 @@
 # Set Neovim as MANPAGER
 export MANPAGER='nvim +Man!'
 
+# Set Neovim as EDITOR
+export EDITOR='nvim'
+
 # Set bat as MANPAGER
 # export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
@@ -54,6 +57,21 @@ export FZF_DEFAULT_OPTS=" \
 #ZSH Syntax Highlighting Theme
 source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# Use lf to switch directories and bind it to ctrl-o
+lfcd () {
+    tmp="$(mktemp -uq)"
+    trap 'rm -f $tmp >/dev/null 2>&1' HUP INT QUIT TERM EXIT
+    lf -last-dir-path="$tmp" "$@"
+    if [ -f "$tmp" ]; then
+        dir="$(cat "$tmp")"
+        [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
+    fi
+}
+bindkey -s '^o' '^ulfcd\n'
+
+bindkey -s '^a' '^ubc -lq\n'
+
+bindkey -s '^f' '^ucd "$(dirname "$(fzf)")"\n'
 
 case `uname` in
   Darwin)
