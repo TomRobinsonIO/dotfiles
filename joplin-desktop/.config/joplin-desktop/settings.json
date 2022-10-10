@@ -26,7 +26,6 @@
 		"visible": true
 	},
 	"noteVisiblePanes": [
-		"editor",
 		"viewer"
 	],
 	"dateFormat": "MM/DD/YYYY",
