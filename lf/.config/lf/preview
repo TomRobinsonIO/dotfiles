@@ -34,15 +34,22 @@ glowormdcat() {
 CACHE="$HOME/.cache/lf/thumbnail.$(stat --printf '%n\0%i\0%F\0%s\0%W\0%Y' -- "$(readlink -f "$1")" | sha256sum | awk '{print $1}'))"
 
 case "$(printf "%s\n" "$(readlink -f "$1")" | awk '{print tolower($0)}')" in
-	*.tgz|*.tar.gz) tar tzf "$1" ;;
-	*.tar.bz2|*.tbz2) tar tjf "$1" ;;
-	*.tar.txz|*.txz) xz --list "$1" ;;
-	*.tar) tar tf "$1" ;;
-	*.zip|*.jar|*.war|*.ear|*.oxt) unzip -l "$1" ;;
-	*.rar) unrar l "$1" ;;
+	*.tgz|*.tar.gz) atool --list -- "$1" ;;
+	*.tar.bz2|*.tbz2) atool --list -- "$1" ;;
+	*.tar.txz|*.txz) atool --list -- "$1" ;;
+	*.tar) atool --list -- "$1" ;;
+	*.zip|*.jar|*.war|*.ear|*.oxt) atool --list -- "$1" ;;
+	*.rar) atool --list -- "$1" ;;
+	*.7z) atool --list -- "$1" ;;
+	# *.tgz|*.tar.gz) tar tzf "$1" ;;
+	# *.tar.bz2|*.tbz2) tar tjf "$1" ;;
+	# *.tar.txz|*.txz) xz --list "$1" ;;
+	# *.tar) tar tf "$1" ;;
+	# *.zip|*.jar|*.war|*.ear|*.oxt) unzip -l "$1" ;;
+	# *.rar) unrar l "$1" ;;
+	# *.7z) 7z l "$1" ;;
   *.md) 
-  	glowormdcat "$1";;
-	*.7z) 7z l "$1" ;;
+  	batorcat "$1";;
 	*.[1-8]) man "$1" | col -b ;;
 	*.o) nm "$1";;
 	*.torrent) transmission-show "$1" ;;
