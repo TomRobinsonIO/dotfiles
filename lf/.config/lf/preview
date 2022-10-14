@@ -1,0 +1,64 @@
+#!/usr/bin/env sh
+
+preview() {
+	cat <<-EOF | paste -sd '' >"$LF_UEBERZUG_TEMPDIR/fifo"
+	{
+	"action": "add", "identifier": "lf-preview",
+	"path": "$1", "x": $4, "y": $5, "width": $2, "height": $3,
+	"scaler": "contain"
+	}
+	EOF
+}
+
+case "$(file --dereference --brief --mime-type -- "$1")" in
+	image/*) image "$1" "$2" "$3" "$4" "$5" "$1" ;;
+	text/html) lynx -width="$4" -display_charset=utf-8 -dump "$1" ;;
+	text/troff) man ./ "$1" | col -b ;;
+	text/* | */xml | application/json) bat --terminal-width "$(($4-2))" -f "$1" ;;
+	application/zip) atool --list -- "$1" ;;
+	audio/* | application/octet-stream) mediainfo "$1" || exit 1 ;;
+	video/* )
+		CACHE="${XDG_CACHE_HOME:-$HOME/.cache}/lf/thumb.$(stat --printf '%n\0%i\0%F\0%s\0%W\0%Y' -- "$(readlink -f "$1")" | sha256sum | cut -d' ' -f1)"
+		[ ! -f "$CACHE" ] && ffmpegthumbnailer -i "$1" -o "$CACHE" -s 0
+		image "$CACHE" "$2" "$3" "$4" "$5" "$1"
+		;;
+	*/pdf)
+		CACHE="${XDG_CACHE_HOME:-$HOME/.cache}/lf/thumb.$(stat --printf '%n\0%i\0%F\0%s\0%W\0%Y' -- "$(readlink -f "$1")" | sha256sum | cut -d' ' -f1)"
+		[ ! -f "$CACHE.jpg" ] && pdftoppm -jpeg -f 1 -singlefile "$1" "$CACHE"
+		image "$CACHE.jpg" "$2" "$3" "$4" "$5" "$1"
+		;;
+	*opendocument*) odt2txt "$1" ;;
+	application/pgp-encrypted) gpg -d -- "$1" ;;
+esac
+
+# file="$1"; shift
+# case "$(basename "$file" | tr '[:upper:]' '[:lower:]')" in
+# *.tar*) tar tf "$file" ;;
+# *.zip) unzip -l "$file" ;;
+# *.rar) unrar l "$file" ;;
+# *.7z) 7z l "$file" ;;
+# *.avi|*.mp4|*.mkv)
+# 	thumbnail="$LF_UEBERZUG_TEMPDIR/thumbnail.png"
+# 	ffmpeg -y -i "$file" -vframes 1 "$thumbnail"
+# 	preview "$thumbnail" "$@"
+# 	;;
+# *.pdf)
+# 	thumbnail="$LF_UEBERZUG_TEMPDIR/thumbnail.png"
+# 	gs -o "$thumbnail" -sDEVICE=pngalpha -dLastPage=1 "$file" >/dev/null
+# 	preview "$thumbnail" "$@"
+# 	;;
+# *.jpg|*.jpeg|*.png|*.bmp)
+# 	preview "$file" "$@" ;;
+# *.svg)
+# 	thumbnail="$LF_UEBERZUG_TEMPDIR/thumbnail.png"
+# 	gm convert "$file" "$thumbnail"
+# 	preview "$thumbnail" "$@"
+# 	;;
+# *.gif)
+# 	thumbnail="$LF_UEBERZUG_TEMPDIR/thumbnail.png"
+# 	gm convert "$file[0]" "$thumbnail"
+# 	preview "$thumbnail" "$@"
+# 	;;
+# *) cat "$file" ;;
+# esac
+return 127 # nonzero retcode required for lf previews to reload
