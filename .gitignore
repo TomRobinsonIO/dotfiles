@@ -4,6 +4,11 @@ luac.out
 nvim/.config/nvim/plugin/packer_compiled.lua
 .DS_Store
 
+joplin/.config/joplin/tmp/
+joplin/.config/joplin/cache/
+joplin/.config/joplin/resources/
+joplin/.config/joplin/log.txt
+joplin/.config/joplin/database.sqlite
 joplin-desktop/.config/joplin-desktop/cache/
 joplin-desktop/.config/joplin-desktop/resources/
 joplin-desktop/.config/joplin-desktop/tmp/
