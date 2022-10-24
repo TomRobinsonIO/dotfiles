@@ -8,6 +8,7 @@ joplin/.config/joplin/tmp/
 joplin/.config/joplin/cache/
 joplin/.config/joplin/resources/
 joplin/.config/joplin/log.txt
+joplin/.config/joplin/settings.json
 joplin/.config/joplin/database.sqlite
 joplin-desktop/.config/joplin-desktop/cache/
 joplin-desktop/.config/joplin-desktop/resources/

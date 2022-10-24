@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Email</key>
+	<string>nihilism65@gmail.com</string>
+	<key>Expires</key>
+	<string>never</string>
+	<key>MinimalVersion</key>
+	<string>20000</string>
+	<key>Name</key>
+	<string>Thomas Robinson</string>
+	<key>Order</key>
+	<string>TUP140322-9159-42699</string>
+	<key>Product</key>
+	<string>beamer2</string>
+	<key>Signature</key>
+	<data>IldwO3KQPGMGpaZRFDG9WTV1kKH0/Qd8yOglyE9zDsi9WsnOh6MQ/HJ+FXh4
+	KV3YczTOvorc0bYeAhGbDJM3DJ9ihcjddzOymZWgPzO0t61wZ9bmVUURn1gl
+	OIQbSaPdJCveUdqdCx+CDhfjJip2Fah6qvCjuE8hDl5OlHHK2QFjchFYF3Sq
+	I12jRw+VERaxnGyDu76pm8gbpIFuHSyXQPhdw4/S2DfPOrGWZhtzz5xsO0fW
+	dYxN/wsZKb82XytzvQTXD1Fl+GPJ4eHUjCDnAOdt5dAcw0rUcD66A9P3vBCE
+	Dk4vzDJyDzWVfnZGvDuZs5/PG+XrXQBdE07yuqHpUw==
+	</data>
+	<key>Timestamp</key>
+	<date>2014-03-22T13:39:16Z</date>
+	<key>Type</key>
+	<string>Personal</string>
+</dict>
+</plist>
