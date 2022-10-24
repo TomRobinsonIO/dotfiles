@@ -13,6 +13,7 @@ joplin/.config/joplin/database.sqlite
 joplin-desktop/.config/joplin-desktop/cache/
 joplin-desktop/.config/joplin-desktop/resources/
 joplin-desktop/.config/joplin-desktop/tmp/
+joplin-desktop/.config/joplin-desktop/settings.json
 *.sqlite
 log.txt
 
