@@ -94,6 +94,10 @@ case `uname` in
     #nvm for node version management
     export NVM_DIR="$HOME/.nvm"
     source $(brew --prefix nvm)/nvm.sh #This loads nvm
+
+    # Linux Utils in Path
+    export PATH="/opt/homebrew/opt/util-linux/bin:$PATH"
+    export PATH="/opt/homebrew/opt/util-linux/sbin:$PATH"
   ;;
   Linux)
     # commands for Linux go here
@@ -113,5 +117,3 @@ case `uname` in
     # commands for FreeBSD go here
   ;;
 esac
-
-export PATH="/usr/local/sbin:$PATH:$HOME/.local/bin:$JAVA_HOME/bin"
