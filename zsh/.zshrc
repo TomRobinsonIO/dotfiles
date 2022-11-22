@@ -98,6 +98,7 @@ case `uname` in
     # Linux Utils in Path
     export PATH="/opt/homebrew/opt/util-linux/bin:$PATH"
     export PATH="/opt/homebrew/opt/util-linux/sbin:$PATH"
+    export PATH="$HOME/.local/bin/:$PATH"
   ;;
   Linux)
     # commands for Linux go here
