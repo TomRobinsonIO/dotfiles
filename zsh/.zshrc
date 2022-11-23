@@ -109,7 +109,7 @@ case `uname` in
     export SUDO_EDITOR
     
     #Java
-    export JAVA_HOME="/usr/lib/jvm/java-18-openjdk"
+    export JAVA_HOME="/usr/lib/jvm/java-19-openjdk"
 
     #nvm for node version management
     source /usr/share/nvm/init-nvm.sh
