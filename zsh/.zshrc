@@ -16,6 +16,7 @@ fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="$HOME/.local/bin/:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -57,7 +58,7 @@ export FZF_DEFAULT_OPTS=" \
 #ZSH Syntax Highlighting Theme
 source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# Use rapper script for lf to allow image previews
+# Use wrapper script for lf to allow image previews
 alias lf='lfub'
 
 # Use lf to switch directories and bind it to ctrl-o
@@ -71,6 +72,8 @@ lfcd () {
     fi
 }
 bindkey -s '^o' '^ulfcd\n'
+
+bindkey -s '^g' '^ulazygit\n'
 
 bindkey -s '^a' '^ubc -lq\n'
 
@@ -98,7 +101,6 @@ case `uname` in
     # Linux Utils in Path
     export PATH="/opt/homebrew/opt/util-linux/bin:$PATH"
     export PATH="/opt/homebrew/opt/util-linux/sbin:$PATH"
-    export PATH="$HOME/.local/bin/:$PATH"
   ;;
   Linux)
     # commands for Linux go here
