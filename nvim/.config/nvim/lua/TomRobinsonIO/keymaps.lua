@@ -22,6 +22,10 @@ keymap("n", "<leader>j", "<C-w>j", opts)
 keymap("n", "<leader>k", "<C-w>k", opts)
 keymap("n", "<leader>l", "<C-w>l", opts)
 
+-- Page Up/Down Center Cursor
+keymap("n", "<C-d>", "<C-d>zz", opts)
+keymap("n", "<C-u>", "<C-u>zz", opts)
+
 -- Resize with space + arrows
 keymap("n", "<leader><Up>", ":resize +2<CR>", opts)
 keymap("n", "<leader><Down>", ":resize -2<CR>", opts)
