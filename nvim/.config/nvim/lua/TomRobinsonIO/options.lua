@@ -27,6 +27,7 @@ g["gruvbox_material_transparent_background"] = 1
 g.catppuccin_flavour = "mocha"
 
 c "colorscheme catppuccin"        -- gruvbox_material, dracula, catppuccin, nord
+c "hi colorcolumn guibg=#89b4fa"  -- Set the colorcolumn color to catppuccin blue
 c "set guicursor="                -- Don't change cursor when entering insert mode
 c "set nohlsearch"                -- Turn of highlighting when search is done
 c "set path+=**"                  -- Set path to include subfolders
