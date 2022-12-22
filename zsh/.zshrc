@@ -79,6 +79,10 @@ bindkey -s '^a' '^ubc -lq\n'
 
 bindkey -s '^f' '^ucd "$(dirname "$(fzf)")"\n'
 
+# Enable thefuck
+eval $(thefuck --alias)
+
+
 case `uname` in
   Darwin)
     # commands for OS X go here
