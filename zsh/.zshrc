@@ -100,7 +100,8 @@ case `uname` in
 
     #nvm for node version management
     export NVM_DIR="$HOME/.nvm"
-    source $(brew --prefix nvm)/nvm.sh #This loads nvm
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
     # Linux Utils in Path
     export PATH="/opt/homebrew/opt/util-linux/bin:$PATH"
@@ -124,3 +125,4 @@ case `uname` in
     # commands for FreeBSD go here
   ;;
 esac
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
