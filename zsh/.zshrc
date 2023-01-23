@@ -98,10 +98,6 @@ case `uname` in
 
     alias sudoedit="sudo nvim"
 
-    #nvm for node version management
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
     # Linux Utils in Path
     export PATH="/opt/homebrew/opt/util-linux/bin:$PATH"
@@ -125,4 +121,12 @@ case `uname` in
     # commands for FreeBSD go here
   ;;
 esac
+
+# Syntax hightlighting for Cisco Devices
+ssh() { /usr/bin/ssh "$@" | ct; }
+ssh() { /usr/bin/ssh "$@" | ct; }
+
+#nvm for node version management
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
