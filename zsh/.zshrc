@@ -61,6 +61,10 @@ source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Use wrapper script for lf to allow image previews
 alias lf='lfub'
 
+#WireGuard Quick Aliases
+alias wgup='wg-quick up wg1'
+alias wgdn='wg-quick down wg1'
+
 # Use lf to switch directories and bind it to ctrl-o
 lfcd () {
     tmp="$(mktemp -uq)"
