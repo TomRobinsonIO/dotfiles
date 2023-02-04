@@ -91,6 +91,9 @@ case `uname` in
   Darwin)
     # commands for OS X go here
 
+    # Default Browser
+    export BROWSER="open /Applications/Brave\ Browser.app"
+
     #Enable z - Jump Around
     . `brew --prefix`/etc/profile.d/z.sh
 
