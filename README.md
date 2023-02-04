@@ -11,4 +11,4 @@ Arch & MacOS Config Files
 | Terminal Multiplexer  | tmux                     |
 | Editor                | Neovim                   |
 | Colorscheme           | Catppuccin               |
-| Font                  | JetBrains Mono Nerd Font |
+| Font                  | Hack Nerd Font           |
