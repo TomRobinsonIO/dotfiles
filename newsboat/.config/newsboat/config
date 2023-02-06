@@ -1,12 +1,19 @@
 include ~/.config/newsboat/dark 
 
-# browser "brave %u"
+#Feed Settings
+
+refresh-on-startup yes
+ignore-mode "download"
+
+# Unbind Defaults
 
 unbind-key j
 unbind-key k
 unbind-key h
 unbind-key H
 unbind-key L
+unbind-key g
+unbind-key G
 
 # Bind keys
 bind-key h quit
@@ -17,3 +24,7 @@ bind-key H next-feed
 bind-key L prev-feed
 bind-key u pageup
 bind-key d pagedown
+bind-key g home
+bind-key G end
+bind-key z sort
+bind-key Z rev-sort
