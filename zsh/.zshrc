@@ -131,7 +131,6 @@ esac
 
 # Syntax hightlighting for Cisco Devices
 ssh() { /usr/bin/ssh "$@" | ct; }
-ssh() { /usr/bin/ssh "$@" | ct; }
 
 #nvm for node version management
 export NVM_DIR="$HOME/.nvm"
