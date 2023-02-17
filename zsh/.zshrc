@@ -39,6 +39,7 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Load fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
   export GUILE_LOAD_PATH="/usr/local/share/guile/site/3.0"
@@ -49,11 +50,15 @@ source $ZSH/oh-my-zsh.sh
 #Bat Themes
 export BAT_THEME="Catppuccin-mocha"
 
-#FZF Themes
+#FZF Options
 export FZF_DEFAULT_OPTS=" \
 --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
---color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
+--color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
+--height 40% --border"
+
+# FZF use ripgrep, but you can use also ag, fd
+export FZF_DEFAULT_COMMAND="rg --files --no-ignore-vcs --hidden"
 
 #ZSH Syntax Highlighting Theme
 source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -82,6 +87,8 @@ bindkey -s '^g' '^ulazygit\n'
 bindkey -s '^a' '^ubc -lq\n'
 
 bindkey -s '^f' '^ucd "$(dirname "$(fzf)")"\n'
+
+bindkey -s '^e' '^unvim "$(fzf)"\n'
 
 # Enable thefuck
 eval $(thefuck --alias)
