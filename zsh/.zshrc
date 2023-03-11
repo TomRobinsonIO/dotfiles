@@ -124,6 +124,9 @@ case `uname` in
     #default editor
     SUDO_EDITOR=/usr/bin/nvim
     export SUDO_EDITOR
+
+    #default Browser
+    export BROWSER="brave"
     
     #Java
     export JAVA_HOME="/usr/lib/jvm/java-19-openjdk"

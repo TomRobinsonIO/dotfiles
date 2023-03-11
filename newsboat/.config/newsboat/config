@@ -6,7 +6,7 @@ refresh-on-startup yes
 ignore-mode "download"
 
 # Set Browser
-browser "brave"
+# browser "brave"
 
 # Unbind Defaults
 
