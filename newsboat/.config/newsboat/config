@@ -5,6 +5,9 @@ include ~/.config/newsboat/dark
 refresh-on-startup yes
 ignore-mode "download"
 
+# Set Browser
+browser "brave"
+
 # Unbind Defaults
 
 unbind-key j
