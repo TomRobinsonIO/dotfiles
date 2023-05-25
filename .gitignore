@@ -18,3 +18,5 @@ joplin-desktop/.config/joplin-desktop/settings.json
 log.txt
 
 lf/.config/lf/shortcutrc
+
+aerc/.config/aerc/accounts.conf
