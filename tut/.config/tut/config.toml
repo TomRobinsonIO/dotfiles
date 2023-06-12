@@ -121,7 +121,7 @@ redraw-ui=true
 # default this is disabled and you enable it by setting a key here. It can only
 # consist of one char, so set it to something like a comma.
 # default=""
-leader-key=""
+leader-key=" "
 
 # Number of milliseconds before the leader command resets. So if you tap the
 # leader-key by mistake or are to slow it empties all the input after X
@@ -236,6 +236,10 @@ leader-timeout=1000
 # shortcut="c"
 # --- END OF EXAMPLE ---
 
+[[general.leader-actions]]
+type="newer"
+shortcut="n"
+
 # The action you want to run.
 # valid: blocking, boosts, clear-notifications, close-pane, compose, edit, favorited,
 # favorites, followers, following, history, list-placement, list-split, lists,
@@ -289,7 +293,7 @@ reverse=false
 # The program to open videos. TUT_OS_DEFAULT equals xdg-open on Linux, open on
 # MacOS and start on Windows.
 # default="TUT_OS_DEFAULT"
-program="TUT_OS_DEFAULT"
+program="mpv"
 
 # Arguments to pass to the program.
 # default=""
@@ -314,7 +318,7 @@ reverse=false
 # The program to open audio. TUT_OS_DEFAULT equals xdg-open on Linux, open on
 # MacOS and start on Windows.
 # default="TUT_OS_DEFAULT"
-program="TUT_OS_DEFAULT"
+program="mpv"
 
 # Arguments to pass to the program.
 # default=""
