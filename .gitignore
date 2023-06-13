@@ -1,9 +1,13 @@
 # Compiled Lua sources
 luac.out
-
-nvim/.config/nvim/plugin/packer_compiled.lua
 .DS_Store
+*.sqlite
+log.txt
 
+# Neovim
+nvim/.config/nvim/plugin/packer_compiled.lua
+
+# Joplin
 joplin/.config/joplin/tmp/
 joplin/.config/joplin/cache/
 joplin/.config/joplin/resources/
@@ -14,9 +18,12 @@ joplin-desktop/.config/joplin-desktop/cache/
 joplin-desktop/.config/joplin-desktop/resources/
 joplin-desktop/.config/joplin-desktop/tmp/
 joplin-desktop/.config/joplin-desktop/settings.json
-*.sqlite
-log.txt
 
+# LF
 lf/.config/lf/shortcutrc
 
+# Aerc
 aerc/.config/aerc/accounts.conf
+
+# Tut
+tut/.config/tut/accounts.toml
