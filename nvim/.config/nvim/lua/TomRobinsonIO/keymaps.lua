@@ -22,6 +22,10 @@ keymap("n", "<leader>j", "<C-w>j", opts)
 keymap("n", "<leader>k", "<C-w>k", opts)
 keymap("n", "<leader>l", "<C-w>l", opts)
 
+-- Create new splits
+keymap("n", "<leader>sv", ":vsplit <CR>", opts)
+keymap("n", "<leader>sh", ":split <CR>", opts)
+
 -- Page Up/Down Center Cursor
 keymap("n", "<C-d>", "<C-d>zz", opts)
 keymap("n", "<C-u>", "<C-u>zz", opts)
