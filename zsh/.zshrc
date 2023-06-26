@@ -141,6 +141,9 @@ case `uname` in
 
     #nvm for node version management
     source /usr/share/nvm/init-nvm.sh
+
+    # Aliases
+    alias tut="tut-mastodon"
   ;;
   FreeBSD)
     # commands for FreeBSD go here
