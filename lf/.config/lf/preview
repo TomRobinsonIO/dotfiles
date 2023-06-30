@@ -309,7 +309,7 @@ case "$(printf "%s\n" "$(readlink -f "$1")" | awk '{print tolower($0)}')" in
 	*.docx) docx2txt "$1" ;;
     *.txt) gloworbat "$1" ;;
     *.log) gloworbat "$1" ;;
-    *.rtf) gloworbat "$1" ;;
+    *.rtf) unrtf --text "$1" | gloworbat ;;
   *.xml|*.html) w3m -dump "$1";;
 	*.xls|*.xlsx)
 		ssconvert --export-type=Gnumeric_stf:stf_csv "$1" "fd://1" | batorcat --language=csv
