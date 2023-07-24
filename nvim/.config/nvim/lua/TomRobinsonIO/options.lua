@@ -3,6 +3,7 @@ local c = vim.cmd
 local g = vim.g
 
 -- o.clipboard = "unnamedplus"       -- allows neovim to access the system clipboard
+o.cursorline = true               -- Highlight line cursor is currently on
 o.expandtab = true                -- Converts tabs to spaces
 o.ignorecase = true               -- Make search case insensitive
 o.incsearch = true                -- While typing a search command, show where the pattern, as it was typed so far, matches
