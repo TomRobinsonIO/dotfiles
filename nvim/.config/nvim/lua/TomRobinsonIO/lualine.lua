@@ -1,12 +1,11 @@
-local status_ok, lualine = pcall(require, "lualine")
-if not status_ok then
+local status_ok, lualine = pcall(require, "lualine") if not status_ok then
     print('lualine broke')
   return
 end
 
-local status_gps_ok, gps = pcall(require, "nvim-gps")
-if not status_gps_ok then
-    print('gps broke')
+local status_navic_ok, navic = pcall(require, "nvim-navic")
+if not status_navic_ok then
+    print('navic broke')
   return
 end
 
@@ -70,12 +69,12 @@ local spaces = function()
   return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
 end
 
-local nvim_gps = function()
-  local gps_location = gps.get_location()
-  if gps_location == "error" then
+local nvim_navic = function()
+  local navic_location = navic.get_location()
+  if navic_location == "error" then
     return ""
   else
-    return gps.get_location()
+    return navic.get_location()
   end
 end
 
@@ -91,8 +90,9 @@ require ('lualine').setup {
   sections = {
     lualine_a = { mode },
     lualine_b = { "branch", "diagnostics" },
-    lualine_c = {
-      { nvim_gps, cond = hide_in_width },
+    lualine_c = { 
+        {"filename"},
+      { nvim_navic, cond = hide_in_width },
     },
     lualine_x = { diff, spaces, "encoding", filetype },
     lualine_y = { progress },

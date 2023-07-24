@@ -50,7 +50,6 @@ return packer.startup(function(use)
     use "airblade/vim-rooter" -- Root to CWD
     use "nvim-telescope/telescope.nvim"
     use "nvim-telescope/telescope-fzy-native.nvim"
-    use "SmiteshP/nvim-gps"
     use "kylechui/nvim-surround" -- Add/Edit surrounding pairs
     use "tpope/vim-fugitive" -- Vim Git itigrations
     use "tpope/vim-rhubarb" -- Vim Git browser
@@ -58,6 +57,7 @@ return packer.startup(function(use)
     use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
     use "rcarriga/nvim-notify" -- A fancy, configurable, notification manager for Neovim
     use "folke/todo-comments.nvim" --highlight and search for todo comments like TODO, HACK, BUG in your code base
+    use  "SmiteshP/nvim-navic"
 
     -- Colorschemes
     use "sainnhe/gruvbox-material"
@@ -75,20 +75,6 @@ return packer.startup(function(use)
     use "hrsh7th/cmp-nvim-lsp"
     use "hrsh7th/cmp-emoji"
     use "hrsh7th/cmp-nvim-lua"
-    -- use {
-    -- "tzachar/cmp-tabnine",
-    -- config = function()
-    --   local tabnine = require "cmp_tabnine.config"
-    --   tabnine:setup {
-    --     max_lines = 1000,
-    --     max_num_results = 20,
-    --     sort = true,
-    --   }
-    -- end,
-
-    -- run = "./install.sh",
-    -- requires = "hrsh7th/nvim-cmp",
-    -- }
 
       -- snippets
     use "L3MON4D3/LuaSnip" --snippet engine
