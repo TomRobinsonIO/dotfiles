@@ -1,9 +1,5 @@
 #!/bin/sh
 set -e
-if command -v lfm > /dev/null 2>&1
-then
-    lf = "lfm"
-fi
 cleanup() {
     exec 3>&-
 	rm "$FIFO_UEBERZUG"
