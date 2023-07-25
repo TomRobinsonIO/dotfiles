@@ -149,6 +149,7 @@ case `uname` in
     if command -v batcat > /dev/null 2>&1
     then
         alias bat="batcat"
+        export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
     fi
   ;;
   FreeBSD)
