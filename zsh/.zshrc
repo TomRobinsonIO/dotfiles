@@ -18,6 +18,8 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$HOME/.local/bin/:$PATH"
 
+# Set GOPATH
+export GOPATH="$HOME/.local/"
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
