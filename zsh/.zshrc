@@ -144,6 +144,10 @@ case `uname` in
 
     # Aliases
     alias tut="tut-mastodon"
+    if command -v batcat > /dev/null 2>&1
+    then
+        alias bat="batcat"
+    fi
   ;;
   FreeBSD)
     # commands for FreeBSD go here
@@ -152,6 +156,7 @@ esac
 
 # Syntax hightlighting for Cisco Devices
 ssh() { /usr/bin/ssh "$@" | ct; }
+
 
 #nvm for node version management
 export NVM_DIR="$HOME/.nvm"
