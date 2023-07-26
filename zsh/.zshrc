@@ -142,7 +142,7 @@ case `uname` in
     export JAVA_HOME="/usr/lib/jvm/java-19-openjdk"
 
     #nvm for node version management
-    source /usr/share/nvm/init-nvm.sh
+    # source /usr/share/nvm/init-nvm.sh
 
     # Aliases
     alias tut="tut-mastodon"
