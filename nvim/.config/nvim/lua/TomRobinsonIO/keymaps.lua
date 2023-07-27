@@ -26,6 +26,10 @@ keymap("n", "<leader>l", "<C-w>l", opts)
 keymap("n", "<leader>sv", ":vsplit <CR>", opts)
 keymap("n", "<leader>sh", ":split <CR>", opts)
 
+-- Navigate buffers
+keymap("n", "<S-l>", ":bnext<CR>", opts)
+keymap("n", "<S-h>", ":bprevious<CR>", opts)
+
 -- Page Up/Down Center Cursor
 keymap("n", "<C-d>", "<C-d>zz", opts)
 keymap("n", "<C-u>", "<C-u>zz", opts)
