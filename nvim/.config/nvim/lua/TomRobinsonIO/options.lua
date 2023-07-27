@@ -7,6 +7,7 @@ o.cursorline = true               -- Highlight line cursor is currently on
 o.expandtab = true                -- Converts tabs to spaces
 o.ignorecase = true               -- Make search case insensitive
 o.incsearch = true                -- While typing a search command, show where the pattern, as it was typed so far, matches
+o.list = true
 o.number = true                   -- Show line numbering for current line
 o.relativenumber = true           -- Show the line number relative to the line with the cursor
 o.scrolloff = 8                   -- Start scrolling page when cursor is X lines from the bottom

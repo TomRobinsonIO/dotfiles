@@ -76,6 +76,8 @@ if vim.fn.has "mac" == 1 then
       Close = "",
       NewFile = "",
       Search = "",
+      LineLeft = "▏",
+      LineMiddle = "│",
       Lightbulb = "",
       Project = "",
       Dashboard = "",

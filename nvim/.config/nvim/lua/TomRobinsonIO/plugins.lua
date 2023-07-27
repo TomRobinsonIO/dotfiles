@@ -56,8 +56,10 @@ return packer.startup(function(use)
     use "tpope/vim-commentary" -- Comment lines with gcc
     use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
     use "rcarriga/nvim-notify" -- A fancy, configurable, notification manager for Neovim
-    use "folke/todo-comments.nvim" --highlight and search for todo comments like TODO, HACK, BUG in your code base
-    use  "SmiteshP/nvim-navic"
+    use "folke/todo-comments.nvim" -- H ighlight and search for todo comments like TODO, HACK, BUG in your code base
+    use  "SmiteshP/nvim-navic" -- show your current code context
+    use "lukas-reineke/indent-blankline.nvim" -- Indentation guides
+    use 'akinsho/bufferline.nvim' -- Snazzy Bufferline
 
     -- Colorschemes
     use "sainnhe/gruvbox-material"

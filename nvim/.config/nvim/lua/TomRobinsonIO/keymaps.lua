@@ -31,10 +31,18 @@ keymap("n", "<C-d>", "<C-d>zz", opts)
 keymap("n", "<C-u>", "<C-u>zz", opts)
 
 -- Resize with space + arrows
-keymap("n", "<leader><Up>", ":resize +2<CR>", opts)
-keymap("n", "<leader><Down>", ":resize -2<CR>", opts)
-keymap("n", "<leader><Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<leader><Right>", ":vertical resize +2<CR>", opts)
+keymap("n", "<C-Up>", ":resize +2<CR>", opts)
+keymap("n", "<C-Down>", ":resize -2<CR>", opts)
+keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
+keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+
+if vim.fn.has "mac" == 1 then
+    keymap("n", "<A-Up>", ":resize +2<CR>", opts)
+    keymap("n", "<A-Down>", ":resize -2<CR>", opts)
+    keymap("n", "<A-Left>", ":vertical resize -2<CR>", opts)
+    keymap("n", "<A-Right>", ":vertical resize +2<CR>", opts)
+end
+
 
 -- Open NetRW to the left
 -- keymap("n", "<leader>n", ":Lex 15<cr>", opts)
