@@ -469,7 +469,7 @@ posts=false
 # theme="none" and then you can create your own theme below.
 # 
 # default="default"
-theme="catppuccin-mocha"
+theme="nord"
 
 # The xrdb prefix used for colors in .Xresources.
 # default="guess"
