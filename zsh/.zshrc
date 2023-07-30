@@ -50,7 +50,8 @@ source $ZSH/oh-my-zsh.sh
 
 
 #Bat Themes
-export BAT_THEME="Catppuccin-mocha"
+# export BAT_THEME="Catppuccin-mocha"
+export BAT_THEME="Nord"
 
 #FZF Options
 export FZF_DEFAULT_OPTS=" \
