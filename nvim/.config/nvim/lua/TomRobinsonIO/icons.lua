@@ -96,7 +96,7 @@
       Fire = "",
       Gear = "",
       History = "",
-      Lightbulb = "",
+      Lightbulb = "",
       LineLeft = "▏",
       LineMiddle = "│",
       List = "",
