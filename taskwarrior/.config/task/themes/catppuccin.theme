@@ -21,7 +21,7 @@ color.blocked=black on white
 color.blocking=black on bright white
 
 # Project
-color.project.none=red
+color.project.none=magenta
 
 # Priority
 color.uda.priority.H=bold white
@@ -35,7 +35,7 @@ color.tagged=
 
 # Due
 color.due=red
-color.due.today=red
+color.due.today=yellow
 color.overdue=bold red
 
 # UDA
