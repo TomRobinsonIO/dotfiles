@@ -42,8 +42,8 @@ include ~/.config/task/themes/catppuccin.theme
 
 news.version=2.6.0
 
-taskd.certificate=\/Users\/tom\/.config\/task\/certs\/tom.cert.pem
-taskd.key=\/Users\/tom\/.config\/task\/certs\/tom.key.pem
-taskd.ca=\/Users\/tom\/.config\/task\/certs\/ca.cert.pem
+taskd.certificate=~/.config\/task\/certs\/tom.cert.pem
+taskd.key=~/.config\/task\/certs\/tom.key.pem
+taskd.ca=~/.config\/task\/certs\/ca.cert.pem
 taskd.server=task.tomrobinson.io:53589
 taskd.credentials=Home\/Tom\/12873514-20c0-4b0a-a194-38d081ce83b8
