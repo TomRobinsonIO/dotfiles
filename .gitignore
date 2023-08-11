@@ -29,4 +29,4 @@ aerc/.config/aerc/accounts.conf
 tut/.config/tut/accounts.toml
 
 #task
-task/.config/task/certs
+taskwarrior/.config/task/certs
