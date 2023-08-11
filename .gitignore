@@ -27,3 +27,6 @@ aerc/.config/aerc/accounts.conf
 
 # Tut
 tut/.config/tut/accounts.toml
+
+#task
+task/.config/task/certs
