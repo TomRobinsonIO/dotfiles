@@ -1,5 +1,10 @@
 include ~/.config/newsboat/dark 
 
+urls-source "freshrss"
+freshrss-url "https://freshrss.tomrobinson.io/api/greader.php"
+freshrss-login "tom"
+freshrss-passwordeval "pass Homeserver/freshrss"
+
 #Feed Settings
 
 refresh-on-startup yes
@@ -31,3 +36,4 @@ bind-key g home
 bind-key G end
 bind-key z sort
 bind-key Z rev-sort
+freshrss-flag-star "s"
