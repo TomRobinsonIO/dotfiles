@@ -86,7 +86,7 @@ alias wgup='wg-quick up wg1'
 alias wgdn='wg-quick down wg1'
 
 # Docker-Compose Alias
-alias dcp='docker-compose -f /opt/docker/compose/compose.yml'
+alias dcp='docker-compose -f /opt/docker/compose/compose.yaml'
 
 # Tail last 50 lines of docker logs
 alias dtail='docker logs -tf --tail='50' '
