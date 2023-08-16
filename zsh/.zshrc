@@ -54,11 +54,20 @@ source $ZSH/oh-my-zsh.sh
 export BAT_THEME="Nord"
 
 #FZF Options
+# Nord Theme
 export FZF_DEFAULT_OPTS=" \
---color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
---color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
---color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
+--color=fg:#e5e9f0,bg:#2E3440,hl:#81a1c1 \
+--color=fg+:#e5e9f0,bg+:#2E3440,hl+:#81a1c1 \
+--color=info:#eacb8a,prompt:#bf6069,pointer:#b48dac \
+--color=marker:#a3be8b,spinner:#b48dac,header:#a3be8b \
 --height 40% --border"
+
+# Catppuccin-mocha Theme
+# export FZF_DEFAULT_OPTS=" \
+# --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
+# --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
+# --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
+# --height 40% --border"
 
 # FZF use ripgrep, but you can use also ag, fd
 export FZF_DEFAULT_COMMAND="rg --files --no-ignore-vcs --hidden"
@@ -72,9 +81,21 @@ alias lf='lfub'
 # Replace lf with Exa
 alias ls='exa --icons'
 
-#WireGuard Quick Aliases
+# WireGuard Quick Aliases
 alias wgup='wg-quick up wg1'
 alias wgdn='wg-quick down wg1'
+
+# Docker-Compose Alias
+alias dcp='docker-compose -f /opt/docker/compose/docker-compose.yml'
+
+# Tail last 50 lines of docker logs
+alias dtail='docker logs -tf --tail='50' '
+
+# Remove unused images (useful after an upgrade)
+alias dprune='docker image prune'
+
+# Remove unused images, unused networks *and data* (use with care)
+alias dprunesys='docker system prune --all'
 
 # Use lf to switch directories and bind it to ctrl-o
 lfcd () {
