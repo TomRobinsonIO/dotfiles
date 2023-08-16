@@ -97,6 +97,16 @@ alias dprune='docker image prune'
 # Remove unused images, unused networks *and data* (use with care)
 alias dprunesys='docker system prune --all'
 
+# taskwarrior aliases
+alias t='task'
+alias ta='task add'
+alias tm='task modify'
+alias tb='task burndown.daily'
+alias tl='task long'
+alias tt='task timesheet'
+alias tmod="task modify"
+alias tcal="task calendar"
+
 # Use lf to switch directories and bind it to ctrl-o
 lfcd () {
     tmp="$(mktemp -uq)"
