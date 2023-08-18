@@ -54,6 +54,9 @@ end
 -- Open Nvim-Tree to the left
 keymap("n", "<leader>n", ":NvimTreeToggle<CR>", opts)
 
+-- Close Buffer and focus on next
+keymap("n", "<leader>d", "<cmd>lua DeleteCurrentBuffer()<cr>", opts)
+
 -- Telescope Maps
 keymap("n", "<leader>ff", ":Telescope find_files hidden=true<cr>", opts)
 keymap("n", "<leader>fg", ":Telescope live_grep<cr>", opts)
@@ -77,3 +80,4 @@ keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<C-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<C-k>", ":move '<-2<CR>gv-gv", opts)
+

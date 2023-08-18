@@ -24,7 +24,27 @@ end
 --   "Mappings migrated" are correct
 --
 -- Please see https://github.com/nvim-tree/nvim-tree.lua/wiki/Migrating-To-on_attach for assistance in migrating.
---
+
+-- Function to close current buffer and prevent nvim-tree focus
+function DeleteCurrentBuffer()
+  local cbn = vim.api.nvim_get_current_buf()
+  local buffers = vim.fn.getbufinfo({buflisted = true})
+  local size = 0
+  local idx = 0
+  for n, e in ipairs(buffers) do
+    size = size + 1
+    if e.bufnr == cbn then
+      idx = n
+    end
+  end
+  if idx == 0 then return end
+  if idx == size then
+    vim.cmd("bprevious")
+  else
+    vim.cmd("bnext")
+  end
+  vim.cmd("bdelete " .. cbn)
+end
 
 local function on_attach(bufnr)
   local api = require('nvim-tree.api')
@@ -102,10 +122,13 @@ local function on_attach(bufnr)
   vim.keymap.set('n', 'v', api.node.open.vertical, opts('Open: Vertical Split'))
 
 end
+
 nvim_tree.setup {
   on_attach = on_attach,
   disable_netrw = true,
   hijack_netrw = true,
+  hijack_cursor = false,
+  hijack_unnamed_buffer_when_opening = false,
   update_focused_file = {
     enable = true,
     update_cwd = true,
@@ -153,11 +176,3 @@ nvim_tree.setup {
     side = "left",
   },
 }
-vim.api.nvim_create_autocmd("BufEnter", {
-  group = vim.api.nvim_create_augroup("NvimTreeClose", {clear = true}),
-  pattern = "NvimTree_*",
-  callback = function()
-    local layout = vim.api.nvim_call_function("winlayout", {})
-    if layout[1] == "leaf" and vim.api.nvim_buf_get_option(vim.api.nvim_win_get_buf(layout[2]), "filetype") == "NvimTree" and layout[3] == nil then vim.cmd("confirm quit") end
-  end
-})
