@@ -10,7 +10,6 @@ end
 
 -- local tree_cb = nvim_tree_config.nvim_tree_callback
 
---
 -- This function has been generated from your
 --   view.mappings.list
 --   view.mappings.custom_only
@@ -34,7 +33,7 @@ local function on_attach(bufnr)
     return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
   end
 
-
+  api.config.mappings.default_on_attach(bufnr)
   -- Default mappings. Feel free to modify or remove as you wish.
   --
   -- BEGIN_DEFAULT_ON_ATTACH
@@ -153,13 +152,12 @@ nvim_tree.setup {
     width = 30,
     side = "left",
   },
-  -- Auto-Close Nvim-tree when it is the last open buffer
-  vim.api.nvim_create_autocmd("BufEnter", {
-  nested = true,
+}
+vim.api.nvim_create_autocmd("BufEnter", {
+  group = vim.api.nvim_create_augroup("NvimTreeClose", {clear = true}),
+  pattern = "NvimTree_*",
   callback = function()
-    if #vim.api.nvim_list_wins() == 1 and require("nvim-tree.utils").is_nvim_tree_buf() then
-      vim.cmd "quit"
-    end
+    local layout = vim.api.nvim_call_function("winlayout", {})
+    if layout[1] == "leaf" and vim.api.nvim_buf_get_option(vim.api.nvim_win_get_buf(layout[2]), "filetype") == "NvimTree" and layout[3] == nil then vim.cmd("confirm quit") end
   end
 })
-}
