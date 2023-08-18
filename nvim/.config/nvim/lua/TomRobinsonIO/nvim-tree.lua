@@ -3,12 +3,12 @@ if not status_ok then
   return
 end
 
-local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
-if not config_status_ok then
-  return
-end
+-- local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
+-- if not config_status_ok then
+--   return
+-- end
 
-local tree_cb = nvim_tree_config.nvim_tree_callback
+-- local tree_cb = nvim_tree_config.nvim_tree_callback
 
 --
 -- This function has been generated from your
@@ -105,6 +105,8 @@ local function on_attach(bufnr)
 end
 nvim_tree.setup {
   on_attach = on_attach,
+  disable_netrw = true,
+  hijack_netrw = true,
   update_focused_file = {
     enable = true,
     update_cwd = true,
@@ -151,4 +153,13 @@ nvim_tree.setup {
     width = 30,
     side = "left",
   },
+  -- Auto-Close Nvim-tree when it is the last open buffer
+  vim.api.nvim_create_autocmd("BufEnter", {
+  nested = true,
+  callback = function()
+    if #vim.api.nvim_list_wins() == 1 and require("nvim-tree.utils").is_nvim_tree_buf() then
+      vim.cmd "quit"
+    end
+  end
+})
 }
