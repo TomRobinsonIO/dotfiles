@@ -78,8 +78,8 @@ source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Use wrapper script for lf to allow image previews
 alias lf='lfub'
 
-# Replace lf with Exa
-alias ls='exa --icons'
+# Replace lf with Eza
+alias ls='eza --icons'
 
 # WireGuard Quick Aliases
 alias wgup='wg-quick up wg1'
