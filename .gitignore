@@ -2,7 +2,9 @@
 luac.out
 .DS_Store
 *.sqlite
-log.txt
+log*.txt
+*.log
+
 
 # Neovim
 nvim/.config/nvim/plugin/packer_compiled.lua
