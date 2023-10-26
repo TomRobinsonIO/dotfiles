@@ -76,7 +76,7 @@ export FZF_DEFAULT_COMMAND="rg --files --no-ignore-vcs --hidden"
 source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Use wrapper script for lf to allow image previews
-alias lf='lfub'
+# alias lf='lfub'
 
 # Replace lf with Eza
 alias ls='eza --icons'
