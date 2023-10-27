@@ -21,12 +21,6 @@ joplin-desktop/.config/joplin-desktop/resources/
 joplin-desktop/.config/joplin-desktop/tmp/
 joplin-desktop/.config/joplin-desktop/settings.json
 
-# LF
-lf/.config/lf/shortcutrc
-
-# Aerc
-aerc/.config/aerc/accounts.conf
-
 # Tut
 tut/.config/tut/accounts.toml
 
