@@ -146,6 +146,9 @@ case `uname` in
     # disable special creation/extraction of ._* files by tar, etc. on Mac OS X
     COPYFILE_DISABLE=1; export COPYFILE_DISABLE
 
+    #Bitwarden Session
+    source ~/.cache/bwcache
+
     #iterm shell integration
     test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
 
