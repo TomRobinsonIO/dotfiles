@@ -5,7 +5,7 @@
 export EDITOR='nvim'
 
 # Set bat as MANPAGER
-export MANPAGER='batman'
+alias man='batman'
 # export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
