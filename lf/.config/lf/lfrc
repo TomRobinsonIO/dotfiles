@@ -58,7 +58,7 @@ cmd compress ${{
 	clear; tput cup $(($(tput lines)/3)); tput bold
 	set -f
 	printf "%s\t" "$fx"
-    clear; printf "Archive Name: "
+    printf "\nArchive Name: "
     read ans
     file=$(basename $fx)
     apack $ans $file
