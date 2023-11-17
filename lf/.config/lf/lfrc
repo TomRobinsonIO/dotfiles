@@ -54,6 +54,16 @@ cmd open ${{
 
 cmd mkdir $mkdir -p "$(echo $* | tr ' ' '\ ')"
 
+cmd compress ${{
+	clear; tput cup $(($(tput lines)/3)); tput bold
+	set -f
+	printf "%s\t" "$fx"
+    printf "\nArchive Name: "
+    read ans
+    file=$(basename $fx)
+    apack $ans $file
+}}
+
 cmd extract ${{
 	clear; tput cup $(($(tput lines)/3)); tput bold
 	set -f
@@ -103,6 +113,7 @@ map J $lf -remote "send $id cd $(sed -e 's/\s*#.*//' -e '/^$/d' -e 's/^\S*\s*//'
 map gg top
 map D delete
 map E extract
+map Z compress
 map C copyto
 map M moveto
 map <c-n> push :mkdir<space>
