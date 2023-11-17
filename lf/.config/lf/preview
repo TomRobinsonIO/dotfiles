@@ -309,6 +309,7 @@ case "$(printf "%s\n" "$(readlink -f "$1")" | awk '{print tolower($0)}')" in
 	*.docx) docx2txt "$1" ;;
     *.txt) gloworbat "$1" ;;
     *.log) gloworbat "$1" ;;
+    *.conf|*.cfg) gloworbat "$1" ;;
     *.rtf) unrtf --text "$1" | gloworbat ;;
     *.xml|*.html) w3m -dump "$1";;
     *.csv|*.tsv|*.tgv) batorcat --language=csv "$1" ;;
