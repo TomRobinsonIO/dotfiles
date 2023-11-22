@@ -12,6 +12,7 @@ ignore-mode "download"
 
 # Set Browser
 # browser "brave"
+browser "firefox"
 
 # Unbind Defaults
 
