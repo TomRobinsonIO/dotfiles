@@ -101,13 +101,15 @@ alias dprunesys='docker system prune --all'
 # taskwarrior aliases
 alias t='task'
 alias ta='task add'
-alias ts='task sync'
-alias tm='task modify'
 alias tb='task burndown.daily'
+alias th='task +home'
 alias tl='task long'
+alias tm='task modify'
+alias ts='task sync'
 alias tt='task timesheet'
-alias tmod='task modify'
+alias tw='task +work'
 alias tcal='task calendar'
+alias tmod='task modify'
 alias tsync='task sync'
 
 # Use lf to switch directories and bind it to ctrl-o
