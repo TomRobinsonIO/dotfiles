@@ -218,6 +218,7 @@ ls.add_snippets(nil, {
             func(function(_, snip)
                 return snip.env.TM_SELECTED_TEXT[1] or {}
             end, {}),
+            insert(2),
             text ")",
             insert(0),
         }),
