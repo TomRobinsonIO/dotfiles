@@ -141,7 +141,7 @@ case `uname` in
     # commands for OS X go here
 
     # Default Browser
-    export BROWSER="open /Applications/Brave\ Browser.app"
+    export BROWSER="open /Applications/Firefox.app"
 
     #Enable z - Jump Around
     . `brew --prefix`/etc/profile.d/z.sh
@@ -155,7 +155,9 @@ case `uname` in
     #iterm shell integration
     test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
 
+    # Linux aliases
     alias sudoedit="sudo nvim"
+    alias mimeopen="open"
 
     #XDG Home in Path
     export XDG_CONFIG_HOME="$HOME/.config"
@@ -176,7 +178,7 @@ case `uname` in
     export SUDO_EDITOR
 
     #default Browser
-    export BROWSER="brave"
+    export BROWSER="firefox"
     
     #Java
     export JAVA_HOME="/usr/lib/jvm/java-19-openjdk"
