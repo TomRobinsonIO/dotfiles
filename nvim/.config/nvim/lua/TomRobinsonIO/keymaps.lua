@@ -34,6 +34,10 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<leader>y", '"+y', opts)
 keymap("n", "<leader>p", '"+p', opts)
 
+-- Delete without overwriting default register
+keymap("n", "x", '"_x', opts)
+keymap("n", "X", '"_d$', opts)
+
 -- Page Up/Down Center Cursor
 keymap("n", "<C-d>", "<C-d>zz", opts)
 keymap("n", "<C-u>", "<C-u>zz", opts)
@@ -85,3 +89,7 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<C-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<C-k>", ":move '<-2<CR>gv-gv", opts)
 
+-- Paste without overwriting default register with selected text
+keymap("x", "p", '"_dP', opts)
+keymap("x", "x", '"_x', opts)
+keymap("x", "X", '"_d$', opts)
