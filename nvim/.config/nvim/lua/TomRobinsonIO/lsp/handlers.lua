@@ -69,12 +69,12 @@ local function lsp_keymaps(bufnr)
 	keymap(bufnr, "n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
 	keymap(bufnr, "n", "<leader>ls", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 	keymap(bufnr, "n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
-    vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
+	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format{ async = true }' ]])
 end
 
 M.on_attach = function(client, bufnr)
-    local navic = require "nvim-navic"
-    navic.attach(client, bufnr)
+	local navic = require("nvim-navic")
+	navic.attach(client, bufnr)
 	if client.name == "tsserver" then
 		client.server_capabilities.documentFormattingProvider = false
 	end
@@ -83,8 +83,8 @@ M.on_attach = function(client, bufnr)
 	-- 	client.server_capabilities.documentFormattingProvider = false
 	-- end
 
-    if client.server_capabilities.documentSymbolProvider then
-  end
+	-- if client.server_capabilities.documentSymbolProvider then
+	-- end
 
 	lsp_keymaps(bufnr)
 	local status_ok, illuminate = pcall(require, "illuminate")
