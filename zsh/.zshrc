@@ -42,17 +42,16 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Load fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-  export GUILE_LOAD_PATH="/usr/local/share/guile/site/3.0"
-  export GUILE_LOAD_COMPILED_PATH="/usr/local/lib/guile/3.0/site-ccache"
-  export GUILE_SYSTEM_EXTENSIONS_PATH="/usr/local/lib/guile/3.0/extensions"
-
+export GUILE_LOAD_PATH="/usr/local/share/guile/site/3.0"
+export GUILE_LOAD_COMPILED_PATH="/usr/local/lib/guile/3.0/site-ccache"
+export GUILE_SYSTEM_EXTENSIONS_PATH="/usr/local/lib/guile/3.0/extensions"
 
 #Bat Themes
 # export BAT_THEME="Catppuccin-mocha"
 export BAT_THEME="Nord"
+
+# Load fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 #FZF Options
 # Nord Theme
@@ -62,6 +61,10 @@ export FZF_DEFAULT_OPTS=" \
 --color=info:#eacb8a,prompt:#bf6069,pointer:#b48dac \
 --color=marker:#a3be8b,spinner:#b48dac,header:#a3be8b \
 --height 40% --border"
+# Preview file content using bat (https://github.com/sharkdp/bat)
+export FZF_CTRL_T_OPTS="
+  --preview 'bat -n --color=always {}'
+  --bind 'ctrl-/:change-preview-window(down|hidden|)'"
 
 # Catppuccin-mocha Theme
 # export FZF_DEFAULT_OPTS=" \
@@ -81,10 +84,6 @@ source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Replace lf with Eza
 alias ls='eza --icons'
-
-# WireGuard Quick Aliases
-alias wgup='wg-quick up wg1'
-alias wgdn='wg-quick down wg1'
 
 # Docker-Compose Alias
 alias dcp='docker-compose -f /opt/docker/compose/compose.yaml'
@@ -135,7 +134,15 @@ bindkey -s '^e' '^unvim "$(fzf)"\n'
 # Enable thefuck
 eval $(thefuck --alias)
 
+# Syntax hightlighting for Cisco Devices
+ssh() { /usr/bin/ssh "$@" | ct; }
 
+#nvm for node version management
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+#OS Specific Configurations
 case `uname` in
   Darwin)
     # commands for OS X go here
@@ -198,12 +205,3 @@ case `uname` in
     # commands for FreeBSD go here
   ;;
 esac
-
-# Syntax hightlighting for Cisco Devices
-ssh() { /usr/bin/ssh "$@" | ct; }
-
-
-#nvm for node version management
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
