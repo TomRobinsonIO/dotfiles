@@ -126,7 +126,7 @@ bindkey -s '^o' '^ulfcd\n'
 
 bindkey -s '^g' '^ulazygit\n'
 
-bindkey -s '^a' '^ubc -lq\n'
+bindkey -s '^b' '^ubc -lq\n'
 
 bindkey -s '^f' '^ucd "$(dirname "$(fzf)")"\n'
 
