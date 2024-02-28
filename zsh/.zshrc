@@ -193,6 +193,11 @@ case `uname` in
     #nvm for node version management
     # source /usr/share/nvm/init-nvm.sh
 
+    #Load FZF Completions
+    source /usr/share/doc/fzf/examples/completion.zsh
+    source /usr/share/doc/fzf/examples/key-bindings.zsh
+
+
     # Aliases
     alias tut="tut-mastodon"
     if command -v batcat > /dev/null 2>&1
