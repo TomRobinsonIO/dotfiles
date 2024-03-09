@@ -194,8 +194,8 @@ case `uname` in
     # source /usr/share/nvm/init-nvm.sh
 
     #Load FZF Completions
-    source /usr/share/doc/fzf/examples/completion.zsh
-    source /usr/share/doc/fzf/examples/key-bindings.zsh
+    source /usr/share/fzf/shell/completion.zsh
+    source /usr/share/fzf/shell/key-bindings.zsh
 
 
     # Aliases
