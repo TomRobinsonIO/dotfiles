@@ -178,7 +178,12 @@ case `uname` in
   ;;
   Linux)
     # commands for Linux go here
+
+    # Z Jump Around
     . /usr/share/z/z.sh
+
+    # Cargo in Path
+    export PATH="$HOME/.cargo/bin:$PATH"
 
     #default editor
     SUDO_EDITOR=/usr/bin/nvim
