@@ -20,7 +20,7 @@ set icons
 set period 1
 set hiddenfiles ".*:*.aux:*.log:*.bbl:*.bcf:*.blg:*.run.xml"
 set cleaner '~/.config/lf/cleaner'
-set previewer '~/.config/lf/preview_ueberzug'
+set previewer '~/.config/lf/preview'
 set autoquit true
 
 # cmds/functions
