@@ -82,7 +82,7 @@ source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Use wrapper script for lf to allow image previews
 # alias lf='lfub'
 
-# Replace lf with Eza
+# Replace ls with Eza
 alias ls='eza --icons'
 
 # Docker-Compose Alias
