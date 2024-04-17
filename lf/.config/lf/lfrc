@@ -127,6 +127,7 @@ map O $mimeopen --ask $f
 map gh cd ~
 map gd cd ~/Downloads
 map gs cd ~/Documents
+map gf cd ~/Desktop
 map ga cd /Applications
 map gv cd /Volumes
 map gc cd ~/.config
