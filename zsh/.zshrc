@@ -129,7 +129,7 @@ bindkey -s '^b' '^ubc -lq\n'
 
 bindkey -s '^f' '^ucd "$(dirname "$(fzf)")"\n'
 
-bindkey -s '^e' '^unvim "$(fzf)"\n'
+bindkey -s '^e' '^unvim "$(fzf --preview "bat --style=numbers --color=always --line-range :500 {}")"\n'
 
 # Enable thefuck
 eval $(thefuck --alias)
