@@ -150,9 +150,6 @@ case `uname` in
     # Default Browser
     export BROWSER="open /Applications/Firefox.app"
 
-    #Enable z - Jump Around
-    . `brew --prefix`/etc/profile.d/z.sh
-
     # disable special creation/extraction of ._* files by tar, etc. on Mac OS X
     COPYFILE_DISABLE=1; export COPYFILE_DISABLE
 
@@ -178,9 +175,6 @@ case `uname` in
   ;;
   Linux)
     # commands for Linux go here
-
-    # Z Jump Around
-    . /usr/share/z/z.sh
 
     # Cargo in Path
     export PATH="$HOME/.cargo/bin:$PATH"
@@ -215,3 +209,6 @@ case `uname` in
     # commands for FreeBSD go here
   ;;
 esac
+
+#Enable Zoxide
+eval "$(zoxide init zsh)"
