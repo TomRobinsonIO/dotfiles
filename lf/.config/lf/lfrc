@@ -51,6 +51,13 @@ cmd open ${{
     esac
 }}
 
+cmd yankname ${{
+    case $(uname -s) in
+    Darwin) printf "%s" "$fx" | pbcopy;;
+    Linux) printf "%s" "$fx" | xclip -selection clipboard;;
+    esac
+}}
+
 cmd mkdir $mkdir -p "$(echo $* | tr ' ' '\ ')"
 
 cmd compress ${{
@@ -162,7 +169,7 @@ map V push :!nvim<space>
 
 map W $setsid -f $TERMINAL >/dev/null 2>&1
 
-map Y $printf "%s" "$fx" | xclip -selection clipboard
+map Y yankname
 
 # Source Bookmarks
 source "~/.config/lf/shortcutrc"
