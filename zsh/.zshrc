@@ -94,6 +94,9 @@ alias dtail='docker logs -tf --tail='50' '
 # Remove unused images (useful after an upgrade)
 alias dprune='docker image prune'
 
+# Remove shutdown containers
+alias dprunecon='docker container prune'
+
 # Remove unused images, unused networks *and data* (use with care)
 alias dprunesys='docker system prune --all'
 
@@ -121,15 +124,18 @@ lfcd () {
         [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
     fi
 }
-bindkey -s '^o' '^ulfcd\n'
-
-bindkey -s '^g' '^ulazygit\n'
 
 bindkey -s '^b' '^ubc -lq\n'
 
+bindkey -s '^e' '^unvim "$(fzf --preview "bat --style=numbers --color=always --line-range :500 {}")"\n'
+
 bindkey -s '^f' '^ucd "$(dirname "$(fzf)")"\n'
 
-bindkey -s '^e' '^unvim "$(fzf --preview "bat --style=numbers --color=always --line-range :500 {}")"\n'
+bindkey -s '^g' '^ulazygit\n'
+
+bindkey -s '^o' '^ulfcd\n'
+
+bindkey -s '^s' '^utermscp\n'
 
 # Enable thefuck
 eval $(thefuck --alias)
