@@ -86,7 +86,7 @@ source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 alias ls='eza --icons'
 
 # Docker-Compose Alias
-alias dcp='docker-compose -f /opt/docker/compose/compose.yaml'
+alias dcp='docker compose -f /opt/docker/compose/compose.yaml'
 
 # Tail last 50 lines of docker logs
 alias dtail='docker logs -tf --tail='50' '
