@@ -1,0 +1,35 @@
+# vim:fileencoding=utf-8:foldmethod=marker
+
+#: Themes {{{
+
+theme = nord
+
+#: }}}
+
+#: Fonts {{{
+
+font-family = "MesloLGL Nerd Font Mono"
+
+#: }}}
+
+#: Cursor Customizations {{{
+
+cursor-style = block
+cursor-color = 8fbcbb
+
+#: }}}
+
+#: OS Specific Tweaks {{{
+
+macos-icon = custom-style
+macos-icon-frame = plastic
+macos-icon-ghost-color = 88c0d0
+macos-icon-screen-color = 3b4252
+
+#: }}}
+
+#: Keybindings {{{
+
+keybind = super+f=write_screen_file:open
+
+#: }}}
