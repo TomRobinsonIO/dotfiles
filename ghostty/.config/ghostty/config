@@ -9,6 +9,7 @@ theme = nord
 #: Fonts {{{
 
 font-family = "MesloLGL Nerd Font Mono"
+font-size = 15.0
 
 #: }}}
 
