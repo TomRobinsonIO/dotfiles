@@ -40,7 +40,7 @@ hooks.location=~/.config/task/hooks
 #include no-color.theme
 include ~/.config/task/themes/catppuccin.theme
 
-news.version=2.6.0
+news.version=3.3.0
 
 taskd.certificate=~/.config\/task\/certs\/tom.cert.pem
 taskd.key=~/.config\/task\/certs\/tom.key.pem
