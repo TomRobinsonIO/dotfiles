@@ -3,12 +3,13 @@
 #: Themes {{{
 
 theme = nord
+# theme = catppuccin-mocha
 
 #: }}}
 
 #: Fonts {{{
 
-font-family = "MesloLGL Nerd Font Mono"
+font-family = "SF Mono"
 font-size = 15.0
 
 #: }}}
