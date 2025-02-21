@@ -2,8 +2,8 @@
 
 #: Themes {{{
 
-theme = nord
-# theme = catppuccin-mocha
+# theme = nord
+theme = catppuccin-mocha
 
 #: }}}
 

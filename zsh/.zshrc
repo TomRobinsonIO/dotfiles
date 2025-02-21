@@ -47,31 +47,32 @@ export GUILE_LOAD_COMPILED_PATH="/usr/local/lib/guile/3.0/site-ccache"
 export GUILE_SYSTEM_EXTENSIONS_PATH="/usr/local/lib/guile/3.0/extensions"
 
 #Bat Themes
-# export BAT_THEME="Catppuccin-mocha"
-export BAT_THEME="Nord"
+export BAT_THEME="Catppuccin-mocha"
+# export BAT_THEME="Nord"
 
 # Load fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 #FZF Options
 # Nord Theme
+# export FZF_DEFAULT_OPTS=" \
+# --color=fg:#e5e9f0,bg:#2E3440,hl:#81a1c1 \
+# --color=fg+:#e5e9f0,bg+:#2E3440,hl+:#81a1c1 \
+# --color=info:#eacb8a,prompt:#bf6069,pointer:#b48dac \
+# --color=marker:#a3be8b,spinner:#b48dac,header:#a3be8b \
+# --height 40% --border"
+
+#Catppuccin-mocha Theme
 export FZF_DEFAULT_OPTS=" \
---color=fg:#e5e9f0,bg:#2E3440,hl:#81a1c1 \
---color=fg+:#e5e9f0,bg+:#2E3440,hl+:#81a1c1 \
---color=info:#eacb8a,prompt:#bf6069,pointer:#b48dac \
---color=marker:#a3be8b,spinner:#b48dac,header:#a3be8b \
+--color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
+--color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
+--color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
 --height 40% --border"
+
 # Preview file content using bat (https://github.com/sharkdp/bat)
 export FZF_CTRL_T_OPTS="
   --preview 'bat -n --color=always {}'
   --bind 'ctrl-/:change-preview-window(down|hidden|)'"
-
-# Catppuccin-mocha Theme
-# export FZF_DEFAULT_OPTS=" \
-# --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
-# --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
-# --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
-# --height 40% --border"
 
 # FZF use ripgrep, but you can use also ag, fd
 export FZF_DEFAULT_COMMAND="rg --files --no-ignore-vcs --hidden"
