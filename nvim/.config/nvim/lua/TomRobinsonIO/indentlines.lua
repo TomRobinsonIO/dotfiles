@@ -6,16 +6,25 @@ end
 local icons = require "TomRobinsonIO.icons"
 
 local highlight = {
-    "nord15",
-    "nord14",
-    "nord13",
-    "nord12",
-    "nord11",
+    "CatppuccinRed",
+    "CatppuccinYellow",
+    "CatppuccinSky",
+    "CatppuccinPeach",
+    "CatppuccinGreen",
+    "CatppuccinLavender",
+    "CatppuccinMauve",
 }
 local hooks = require "ibl.hooks"
 -- create the highlight groups in the highlight setup hook, so they are reset
 -- every time the colorscheme changes
 hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+    vim.api.nvim_set_hl(0, "CatppuccinRed", { fg = "#f38ba8" })
+    vim.api.nvim_set_hl(0, "CatppuccinYellow", { fg = "#f9e2af" })
+    vim.api.nvim_set_hl(0, "CatppuccinSky", { fg = "#89dceb" })
+    vim.api.nvim_set_hl(0, "CatppuccinPeach", { fg = "#fab387" })
+    vim.api.nvim_set_hl(0, "CatppuccinGreen", { fg = "#a6e3a1" })
+    vim.api.nvim_set_hl(0, "CatppuccinLavender", { fg = "#b4befe" })
+    vim.api.nvim_set_hl(0, "CatppuccinMauve", { fg = "#cba6f7" })
     vim.api.nvim_set_hl(0, "nord7", { fg = "#8fbcbb" })
     vim.api.nvim_set_hl(0, "nord8", { fg = "#88c0d0" })
     vim.api.nvim_set_hl(0, "nord9", { fg = "#81a1c1" })
@@ -49,7 +58,11 @@ ibl.setup{
     },
     indent = {
         char = {icons.ui.LineLeft},
-        -- highlight = highlight,
+        highlight = highlight,
+    },
+    whitespace = {
+        highlight = highlight,
+        remove_blankline_trail = false,
     },
     scope = {
         enabled = true,
