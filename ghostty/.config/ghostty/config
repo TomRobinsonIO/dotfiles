@@ -33,5 +33,6 @@ macos-icon-screen-color = 3b4252
 #: Keybindings {{{
 
 keybind = super+f=write_screen_file:open
+keybind = cmd+k=clear_screen
 
 #: }}}
