@@ -70,6 +70,7 @@ local plugins = {
     "williamboman/mason-lspconfig.nvim",
     "tamago324/nlsp-settings.nvim", -- language server settings defined in json for
     "nvimtools/none-ls.nvim", -- for formatters and linters
+    "nvimtools/none-ls-extras.nvim",
     "filipdutescu/renamer.nvim",
     "simrat39/symbols-outline.nvim",
     "ray-x/lsp_signature.nvim",
