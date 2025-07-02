@@ -3,7 +3,6 @@ local servers = {
 	"cssls",
 	"html",
     "marksman",
-	"tsserver",
 	"pyright",
 	"bashls",
 	"jsonls",
