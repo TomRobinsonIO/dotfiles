@@ -126,6 +126,15 @@ lfcd () {
     fi
 }
 
+function yazicd() {
+    local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+    yazi "$@" --cwd-file="$tmp"
+    if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+        cd -- "$cwd"
+    fi
+    rm -f -- "$tmp"
+}
+
 bindkey -s '^b' '^ubc -lq\n'
 
 bindkey -s '^e' '^unvim "$(fzf --preview "bat --style=numbers --color=always --line-range :500 {}")"\n'
@@ -134,7 +143,11 @@ bindkey -s '^f' '^ucd "$(dirname "$(fzf)")"\n'
 
 bindkey -s '^g' '^ulazygit\n'
 
-bindkey -s '^o' '^ulfcd\n'
+# LF CD
+# bindkey -s '^o' '^ulfcd\n'
+
+# Yazi CD
+bindkey -s '^o' '^uyazicd\n'
 
 bindkey -s '^s' '^utermscp\n'
 
