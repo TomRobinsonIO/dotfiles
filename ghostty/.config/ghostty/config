@@ -34,5 +34,7 @@ macos-icon-screen-color = 3b4252
 
 keybind = super+f=write_screen_file:open
 keybind = cmd+k=clear_screen
+keybind = super+shift+,=move_tab:-1
+keybind = super+shift+.=move_tab:1
 
 #: }}}
