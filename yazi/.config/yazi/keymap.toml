@@ -1,0 +1,7 @@
+"$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
+
+[mgr]
+
+prepend_keymap = [
+    { on = [ "c", "a" ], run = '''shell --cursor=6 --interactive 'apack  "$@"' ''', desc = "Create archive from selected files" },
+]
