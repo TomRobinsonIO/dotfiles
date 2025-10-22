@@ -28,7 +28,7 @@ require("mason-lspconfig").setup({
 	automatic_installation = true,
 })
 
-local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
+local lspconfig_status_ok, lspconfig = pcall(vim.lsp.config)
 if not lspconfig_status_ok then
     print('mason broke')
 	return
