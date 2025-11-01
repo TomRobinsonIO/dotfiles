@@ -23,6 +23,7 @@ o.tabstop = 4                     -- Insert 4 spaces for a tab
 o.termguicolors = true            -- Set terminal GUI colors
 o.wildmenu = true                 -- Enables "enhanced mode" of command-line completion
 o.wrap = false                    -- Display lines as one long line
+o.winborder = 'rounded'           -- Floating window borders rounded
 
 g["gruvbox_material_palette"] = "mix"
 g["gruvbox_material_transparent_background"] = 1
