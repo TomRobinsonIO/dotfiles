@@ -11,7 +11,7 @@ refresh-on-startup yes
 ignore-mode "download"
 
 # Set Browser
-browser "zen"
+browser "xdg-open %u"
 
 # Unbind Defaults
 
