@@ -62,12 +62,19 @@ export BAT_THEME="Catppuccin-mocha"
 # --color=marker:#a3be8b,spinner:#b48dac,header:#a3be8b \
 # --height 40% --border"
 
-#Catppuccin-mocha Theme
+# Catppuccin-mocha Theme
 export FZF_DEFAULT_OPTS=" \
 --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
 --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
 --height 40% --border"
+
+# # Gruvbox theme
+# export FZF_DEFAULT_OPTS=" \
+#  --color=bg+:#3c3836,bg:#32302f,spinner:#8ec07c,hl:#83a598 \
+#  --color=fg:#bdae93,header:#83a598,info:#fabd2f,pointer:#8ec07c \
+#  --color=marker:#8ec07c,fg+:#ebdbb2,prompt:#fabd2f,hl+:#83a598 \
+# --height 40% --border"
 
 # Preview file content using bat (https://github.com/sharkdp/bat)
 export FZF_CTRL_T_OPTS="
