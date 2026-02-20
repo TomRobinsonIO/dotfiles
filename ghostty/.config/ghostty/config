@@ -38,5 +38,9 @@ keybind = super+f=write_screen_file:open
 keybind = cmd+k=clear_screen
 keybind = super+shift+,=move_tab:-1
 keybind = super+shift+.=move_tab:1
+keybind = super+d=new_split:right
+keybind = super+shift+d=new_split:down
+keybind = super+bracket_left=goto_split:previous
+keybind = super+bracket_right=goto_split:next
 
 #: }}}
