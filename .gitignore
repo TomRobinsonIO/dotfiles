@@ -5,6 +5,8 @@ luac.out
 log*.txt
 *.log
 
+# BTOP
+btop/.config/btop/btop.conf
 
 # Neovim
 nvim/.config/nvim/plugin/packer_compiled.lua
