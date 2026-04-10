@@ -133,6 +133,7 @@ lfcd () {
     fi
 }
 
+# Use yazi to switch directories and bind it to ctrl-o
 function yazicd() {
     local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
     yazi "$@" --cwd-file="$tmp"
@@ -142,9 +143,11 @@ function yazicd() {
     rm -f -- "$tmp"
 }
 
+fzfedit () { fzf --preview "bat --style=numbers --color=always --line-range :500 {}" | xargs -r $EDITOR ;}
+
 bindkey -s '^b' '^ubc -lq\n'
 
-bindkey -s '^e' '^unvim "$(fzf --preview "bat --style=numbers --color=always --line-range :500 {}")"\n'
+bindkey -s '^e' '^ufzfedit\n'
 
 bindkey -s '^f' '^ucd "$(dirname "$(fzf)")"\n'
 
