@@ -80,7 +80,7 @@ local plugins = {
     "MeanderingProgrammer/render-markdown.nvim", -- Render Markdown Syntax in Buffer
 
     -- Treesitter
-    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+    { "nvim-treesitter/nvim-treesitter", lazy = false, build = ":TSUpdate" },
     "JoosepAlviste/nvim-ts-context-commentstring",
     "windwp/nvim-ts-autotag",
     "romgrk/nvim-treesitter-context",
