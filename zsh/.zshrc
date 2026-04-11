@@ -145,6 +145,54 @@ function yazicd() {
 
 fzfedit () { fzf --preview "bat --style=numbers --color=always --line-range :500 {}" | xargs -r $EDITOR ;}
 
+getpkg() {
+  local pkg query
+  query="$1"
+
+  # Detect package manager based on OS
+  if [[ "$OSTYPE" == "darwin"* ]]; then
+    # macOS (Homebrew)
+    if ! command -v brew &>/dev/null; then
+      echo "Error: Homebrew not installed. Install it from https://brew.sh"
+      return 1
+    fi
+    pkg=$(brew search "$query" | fzf | awk '{print $1}')
+    [[ -z "$pkg" ]] && return 1
+    brew install "$pkg"
+  elif [[ -f /etc/os-release ]]; then
+    # Linux distributions
+    . /etc/os-release
+    case "$ID" in
+      ubuntu|debian)
+        pkg=$(apt-cache search "$query" | fzf | awk '{print $1}')
+        [[ -z "$pkg" ]] && return 1
+        sudo apt install "$pkg"
+        ;;
+      fedora|rhel|centos)
+        pkg=$(dnf search "$query" | fzf | awk '{print $1}')
+        [[ -z "$pkg" ]] && return 1
+        sudo dnf install -y "$pkg"
+        ;;
+      arch|manjaro)
+        if ! command -v paru &>/dev/null; then
+          echo "Error: Paru not found. Install it or switch to 'pacman'."
+          return 1
+        fi
+        pkg=$(paru -Ss "$query" | fzf | awk '{print $2}')
+        [[ -z "$pkg" ]] && return 1
+        paru -S "$pkg"
+        ;;
+      *)
+        echo "Unsupported Linux distribution: $ID"
+        return 1
+        ;;
+    esac
+  else
+    echo "Unsupported OS. Manual configuration required."
+    return 1
+  fi
+}
+
 bindkey -s '^b' '^ubc -lq\n'
 
 bindkey -s '^e' '^ufzfedit\n'
