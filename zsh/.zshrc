@@ -1,3 +1,11 @@
+# =============================================================================
+# ZSH Configuration
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# EDITOR & PAGER SETTINGS
+# -----------------------------------------------------------------------------
+
 # Set Neovim as MANPAGER
 # export MANPAGER='nvim +Man!'
 
@@ -8,12 +16,18 @@ export EDITOR='nvim'
 alias man='batman'
 # export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
+# -----------------------------------------------------------------------------
+# POWERLEVEL10K INSTANT PROMPT
+# Must stay near the top - initialization requiring console input goes above
+# -----------------------------------------------------------------------------
+
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+
+# -----------------------------------------------------------------------------
+# PATH CONFIGURATION
+# -----------------------------------------------------------------------------
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -21,14 +35,20 @@ export PATH="$HOME/.local/bin/:$PATH"
 
 # Set GOPATH
 export GOPATH="$HOME/.local/"
+
+# -----------------------------------------------------------------------------
+# OH-MY-ZSH CONFIGURATION
+# -----------------------------------------------------------------------------
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
+# Set name of the theme to load
+# If set to "random", it will load a random theme each time oh-my-zsh is loaded.
+# To know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
@@ -38,22 +58,33 @@ plugins=(git zsh-autosuggestions vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# -----------------------------------------------------------------------------
+# GUILE LOAD PATHS
+# -----------------------------------------------------------------------------
 
 export GUILE_LOAD_PATH="/usr/local/share/guile/site/3.0"
 export GUILE_LOAD_COMPILED_PATH="/usr/local/lib/guile/3.0/site-ccache"
 export GUILE_SYSTEM_EXTENSIONS_PATH="/usr/local/lib/guile/3.0/extensions"
 
-#Bat Themes
+# -----------------------------------------------------------------------------
+# BAT THEME
+# -----------------------------------------------------------------------------
+
+# Bat Themes
 export BAT_THEME="Catppuccin-mocha"
 # export BAT_THEME="Nord"
+
+# -----------------------------------------------------------------------------
+# FZF CONFIGURATION
+# -----------------------------------------------------------------------------
 
 # Load fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-#FZF Options
+# FZF Options
 # Nord Theme
 # export FZF_DEFAULT_OPTS=" \
 # --color=fg:#e5e9f0,bg:#2E3440,hl:#81a1c1 \
@@ -69,7 +100,7 @@ export FZF_DEFAULT_OPTS=" \
 --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
 --height 40% --border --multi"
 
-# # Gruvbox theme
+# Gruvbox theme
 # export FZF_DEFAULT_OPTS=" \
 #  --color=bg+:#3c3836,bg:#32302f,spinner:#8ec07c,hl:#83a598 \
 #  --color=fg:#bdae93,header:#83a598,info:#fabd2f,pointer:#8ec07c \
@@ -84,8 +115,15 @@ export FZF_CTRL_T_OPTS="
 # FZF use ripgrep, but you can use also ag, fd
 export FZF_DEFAULT_COMMAND="rg --files --no-ignore-vcs --hidden"
 
-#ZSH Syntax Highlighting Theme
+# -----------------------------------------------------------------------------
+# ZSH SYNTAX HIGHLIGHTING
+# -----------------------------------------------------------------------------
+
 source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# -----------------------------------------------------------------------------
+# DIRECTORY NAVIGATION TOOLS
+# -----------------------------------------------------------------------------
 
 # Use wrapper script for lf to allow image previews
 # alias lf='lfub'
@@ -93,36 +131,7 @@ source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Replace ls with Eza
 alias ls='eza --icons'
 
-# Docker-Compose Alias
-alias dcp='docker compose -f /opt/docker/compose/compose.yaml'
-
-# Tail last 50 lines of docker logs
-alias dtail='docker logs -tf --tail='50' '
-
-# Remove unused images (useful after an upgrade)
-alias dprune='docker image prune'
-
-# Remove shutdown containers
-alias dprunecon='docker container prune'
-
-# Remove unused images, unused networks *and data* (use with care)
-alias dprunesys='docker system prune --all'
-
-# taskwarrior aliases
-alias t='task'
-alias ta='task add'
-alias tb='task burndown.daily'
-alias th='task +home'
-alias tl='task long'
-alias tm='task modify'
-alias ts='task sync'
-alias tt='task timesheet'
-alias tw='task +work'
-alias tcal='task calendar'
-alias tmod='task modify'
-alias tsync='task sync'
-
-# Use lf to switch directories and bind it to ctrl-o
+# LF CD - Use lf to switch directories and bind it to ctrl-o
 lfcd () {
     tmp="$(mktemp -uq)"
     trap 'rm -f $tmp >/dev/null 2>&1' HUP INT QUIT TERM EXIT
@@ -133,7 +142,7 @@ lfcd () {
     fi
 }
 
-# Use yazi to switch directories and bind it to ctrl-o
+# Yazi CD - Use yazi to switch directories and bind it to ctrl-o
 function yazicd() {
     local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
     yazi "$@" --cwd-file="$tmp"
@@ -143,8 +152,13 @@ function yazicd() {
     rm -f -- "$tmp"
 }
 
+# -----------------------------------------------------------------------------
+# UTILITY FUNCTIONS
+# -----------------------------------------------------------------------------
+
 fzfedit () { fzf --preview "bat --style=numbers --color=always --line-range :500 {}" | xargs -r $EDITOR ;}
 
+# Package installer with fzf selection
 getpkg() {
   local pkg query
   query="$1"
@@ -193,55 +207,96 @@ getpkg() {
   fi
 }
 
+# -----------------------------------------------------------------------------
+# KEY BINDINGS
+# -----------------------------------------------------------------------------
+
 bindkey -s '^b' '^ubc -lq\n'
-
 bindkey -s '^e' '^ufzfedit\n'
-
 bindkey -s '^f' '^ucd "$(dirname "$(fzf)")"\n'
-
 bindkey -s '^g' '^ulazygit\n'
-
-# LF CD
-# bindkey -s '^o' '^ulfcd\n'
-
-# Yazi CD
 bindkey -s '^o' '^uyazicd\n'
-
 bindkey -s '^s' '^utermscp\n'
+
+# -----------------------------------------------------------------------------
+# DOCKER ALIASES
+# -----------------------------------------------------------------------------
+
+# Docker-Compose Alias
+alias dcp='docker compose -f /opt/docker/compose/compose.yaml'
+
+# Tail last 50 lines of docker logs
+alias dtail='docker logs -tf --tail='50' '
+
+# Remove unused images (useful after an upgrade)
+alias dprune='docker image prune'
+
+# Remove shutdown containers
+alias dprunecon='docker container prune'
+
+# Remove unused images, unused networks *and data* (use with care)
+alias dprunesys='docker system prune --all'
+
+# -----------------------------------------------------------------------------
+# TASKWARRIOR ALIASES
+# -----------------------------------------------------------------------------
+
+alias t='task'
+alias ta='task add'
+alias tb='task burndown.daily'
+alias th='task +home'
+alias tl='task long'
+alias tm='task modify'
+alias ts='task sync'
+alias tt='task timesheet'
+alias tw='task +work'
+alias tcal='task calendar'
+alias tmod='task modify'
+alias tsync='task sync'
+
+# -----------------------------------------------------------------------------
+# SHELL ENHANCEMENTS
+# -----------------------------------------------------------------------------
 
 # Enable thefuck
 eval $(thefuck --alias)
 
-# Syntax hightlighting for Cisco Devices
+# Syntax highlighting for Cisco Devices
 ssh() { /usr/bin/ssh "$@" | ct; }
 
-#nvm for node version management
+# -----------------------------------------------------------------------------
+# NVM (NODE VERSION MANAGEMENT)
+# -----------------------------------------------------------------------------
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-#OS Specific Configurations
+# -----------------------------------------------------------------------------
+# OS-SPECIFIC CONFIGURATIONS
+# -----------------------------------------------------------------------------
+
 case `uname` in
   Darwin)
-    # commands for OS X go here
+    # Commands for macOS go here
 
     # Default Browser
     export BROWSER="open /Applications/Firefox.app"
 
-    # disable special creation/extraction of ._* files by tar, etc. on Mac OS X
+    # Disable special creation/extraction of ._* files by tar, etc. on Mac OS X
     COPYFILE_DISABLE=1; export COPYFILE_DISABLE
 
-    #Bitwarden Session
+    # Bitwarden Session
     source ~/.cache/bwcache
 
-    #iterm shell integration
+    # iTerm shell integration
     test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
 
     # Linux aliases
     alias sudoedit="sudo nvim"
     alias mimeopen="open"
 
-    #XDG Home in Path
+    # XDG Home in Path
     export XDG_CONFIG_HOME="$HOME/.config"
     export XDG_CACHE_HOME="$HOME/.cache"
     export XDG_DATA_HOME="$HOME/.local/share"
@@ -252,28 +307,27 @@ case `uname` in
     export PATH="/opt/homebrew/opt/util-linux/sbin:$PATH"
   ;;
   Linux)
-    # commands for Linux go here
+    # Commands for Linux go here
 
     # Cargo in Path
     export PATH="$HOME/.cargo/bin:$PATH"
 
-    #default editor
+    # Default Editor
     SUDO_EDITOR=/usr/bin/nvim
     export SUDO_EDITOR
 
-    #default Browser
+    # Default Browser
     export BROWSER="firefox"
-    
-    #Java
+
+    # Java
     export JAVA_HOME="/usr/lib/jvm/java-19-openjdk"
 
-    #nvm for node version management
+    # NVM for Node Version Management
     # source /usr/share/nvm/init-nvm.sh
 
-    #Load FZF Completions
+    # Load FZF Completions
     source /usr/share/fzf/shell/completion.zsh
     source /usr/share/fzf/shell/key-bindings.zsh
-
 
     # Aliases
     alias tut="tut-mastodon"
@@ -284,9 +338,17 @@ case `uname` in
     fi
   ;;
   FreeBSD)
-    # commands for FreeBSD go here
+    # Commands for FreeBSD go here
   ;;
 esac
 
-#Enable Zoxide
+# -----------------------------------------------------------------------------
+# ZOXIDE (DIRECTORY JUMPER)
+# -----------------------------------------------------------------------------
+
+# Enable Zoxide
 eval "$(zoxide init zsh)"
+
+# =============================================================================
+# END OF ZSHRC
+# =============================================================================
