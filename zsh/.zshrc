@@ -170,7 +170,7 @@ getpkg() {
       echo "Error: Homebrew not installed. Install it from https://brew.sh"
       return 1
     fi
-    pkg=$(brew search "$query" | fzf | awk '{print $1}')
+    pkg=$(brew search "$query" | tr ' ' '\n' | grep -v '^$' | fzf | awk '{print $1}')
     [[ -z "$pkg" ]] && return 1
     brew install "$pkg"
   elif [[ -f /etc/os-release ]]; then
