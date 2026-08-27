@@ -2,7 +2,7 @@
 
 #: Themes {{{
 
-theme = Catppuccin Mocha
+theme = dankcolors
 background-opacity = 0.9
 # theme = gruvbox dark
 # theme = nord
@@ -17,10 +17,18 @@ font-size = 15.0
 
 #: }}}
 
+#: Scrollback {{{
+
+scrollback-limit = 3023
+
+#: }}}
+
 #: Cursor Customizations {{{
 
 cursor-style = block
+cursor-style-blink = true
 cursor-color = 8fbcbb
+mouse-hide-while-typing = true
 
 #: }}}
 
@@ -32,17 +40,30 @@ macos-icon-ghost-color = 88c0d0
 macos-icon-screen-color = 3b4252
 macos-option-as-alt = left
 
+gtk-single-instance = true
+gtk-titlebar = false
+
+#: }}}
+
+#: Shell Integration {{{
+
+shell-integration = detect
+shell-integration-features = cursor,sudo,title,no-cursor
+
 #: }}}
 
 #: Keybindings {{{
 
-keybind = super+f=write_screen_file:open
 keybind = super+k=clear_screen
+keybind = ctrl+k=clear_screen
 keybind = super+shift+,=move_tab:-1
 keybind = super+shift+.=move_tab:1
 keybind = super+d=new_split:right
 keybind = super+shift+d=new_split:down
 keybind = super+bracket_left=goto_split:previous
 keybind = super+bracket_right=goto_split:next
+keybind = ctrl+bracket_left=goto_split:previous
+keybind = ctrl+bracket_right=goto_split:next
+
 
 #: }}}
