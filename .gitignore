@@ -35,3 +35,6 @@ tut/.config/tut/accounts.toml
 
 #task
 taskwarrior/.config/task/certs
+
+# Ghostty
+ghostty/.config/ghostty/themes/
