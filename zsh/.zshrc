@@ -129,7 +129,7 @@ source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # alias lf='lfub'
 
 # Replace ls with Eza
-alias ls='eza --icons'
+alias ls='eza --icons always'
 
 # LF CD - Use lf to switch directories and bind it to ctrl-o
 lfcd () {
