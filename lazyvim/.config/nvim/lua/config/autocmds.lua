@@ -6,3 +6,10 @@
 --
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
+vim.api.nvim_create_autocmd("User", {
+  pattern = "LazyVimStarted",
+  callback = function()
+    vim.cmd([[hi Normal guibg=NONE ctermbg=NONE]])
+    vim.cmd([[hi NormalNC guibg=NONE ctermbg=NONE]])
+  end,
+})

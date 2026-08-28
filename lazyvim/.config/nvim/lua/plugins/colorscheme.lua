@@ -1,8 +1,10 @@
 return {
   "catppuccin/nvim",
-  lazy = true,
+  lazy = false,
   name = "catppuccin",
+  priority = 1000,
   opts = {
+    transparent_background = true, -- disables setting the background color.
     lsp_styles = {
       underlines = {
         errors = { "undercurl" },
@@ -27,7 +29,7 @@ return {
       lsp_trouble = true,
       mason = true,
       mini = true,
-      navic = { enabled = true, custom_bg = "lualine" },
+      navic = { enabled = true },
       neotest = true,
       neotree = true,
       noice = true,
@@ -47,6 +49,12 @@ return {
           opts.highlights = require("catppuccin.special.bufferline").get_theme()
         end
       end,
+    },
+  },
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "catppuccin-mocha",
     },
   },
 }
