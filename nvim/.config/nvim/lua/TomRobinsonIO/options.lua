@@ -11,7 +11,7 @@ o.list = true
 o.number = true                   -- Show line numbering for current line
 o.relativenumber = true           -- Show the line number relative to the line with the cursor
 o.scrolloff = 8                   -- Start scrolling page when cursor is X lines from the bottom
-o.shiftwidth=4                    -- Number of spaces for each indent
+o.shiftwidth = 4                    -- Number of spaces for each indent
 o.showmode = false                -- we don't need to see things like -- INSERT -- anymore
 o.sidescrolloff = 8               -- Start scrolling page when cursor is X lines from the side
 o.signcolumn = 'yes'              -- Always show sign column for warnings, errors, etc.
@@ -34,5 +34,5 @@ c "hi colorcolumn guibg=#89b4fa"  -- Set the colorcolumn color to catppuccin blu
 c "set guicursor="                -- Don't change cursor when entering insert mode
 c "set nohlsearch"                -- Turn of highlighting when search is done
 c "set path+=**"                  -- Set path to include subfolders
--- c "highlight Normal guibg=none"   -- Transparent background
+c "highlight Normal guibg=none"   -- Transparent background
 -- c "highlight ColorColumn guibg=lightgrey"   -- Set line limit indicator color to lightgrey

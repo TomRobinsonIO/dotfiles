@@ -42,6 +42,7 @@ local plugins = {
     "SmiteshP/nvim-navic",              -- show your current code context
     "lukas-reineke/indent-blankline.nvim", -- Indentation guides
     "akinsho/bufferline.nvim",          -- Snazzy Bufferline
+    { "folke/which-key.nvim", event = "VeryLazy", },    -- Remember your Neovim keymaps
 
     -- Colorschemes
     "sainnhe/gruvbox-material",
