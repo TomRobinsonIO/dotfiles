@@ -22,16 +22,6 @@ which_key.setup {
         ellipsis = "…",
     },
 
-    -- Window appearance
-    window = {
-        border = "single",
-        position = "bottom",
-        margin = { 1, 0, 1, 0 },
-        padding = { 2, 2, 2, 2 },
-        winblend = 0,
-        zindex = 1000,
-    },
-
     -- Layout settings
     layout = {
         height = { min = 4, max = 25 },
@@ -40,23 +30,8 @@ which_key.setup {
         align = "center",
     },
 
-    -- Key labels customization
-    key_labels = {},
-
-    -- Hide certain patterns from display
-    hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:" },
-
     -- Show help text in popup
     show_help = true,
-
-    -- Automatic trigger detection
-    triggers = "auto",
-
-    -- Disable triggering in specific modes/keys
-    triggers_blacklist = {
-        i = { "j", "k" },
-        v = { "j", "k" },
-    },
 
     -- Built-in plugins to enable
     plugins = {
