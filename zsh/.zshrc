@@ -336,6 +336,10 @@ case `uname` in
         alias bat="batcat"
         export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
     fi
+    if command -v fdfind > /dev/null 2>&1
+    then
+        alias fd=fdfind
+    fi
   ;;
   FreeBSD)
     # Commands for FreeBSD go here
