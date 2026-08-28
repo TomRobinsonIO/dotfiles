@@ -129,7 +129,7 @@ source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # alias lf='lfub'
 
 # Replace ls with Eza
-alias ls='eza --icons always'
+alias ls='eza --icons'
 
 # LF CD - Use lf to switch directories and bind it to ctrl-o
 lfcd () {
@@ -159,42 +159,93 @@ function yazicd() {
 fzfedit () { fzf --preview "bat --style=numbers --color=always --line-range :500 {}" | xargs -r $EDITOR ;}
 
 # Package installer with fzf selection
-getpkg() {
-  local pkg query
-  query="$1"
-
+pkgsearch() {
+  local query="$1"
+  local selected_packages
+  
   # Detect package manager based on OS
   if [[ "$OSTYPE" == "darwin"* ]]; then
-    # macOS (Homebrew)
     if ! command -v brew &>/dev/null; then
       echo "Error: Homebrew not installed. Install it from https://brew.sh"
       return 1
     fi
-    pkg=$(brew search "$query" | tr ' ' '\n' | grep -v '^$' | fzf | awk '{print $1}')
-    [[ -z "$pkg" ]] && return 1
-    brew install "$pkg"
+    
+    # Brew search - simple package names
+    selected_packages=$(brew search "$query" | tr ' ' '\n' | grep -v '^$' | fzf \
+      --multi \
+      --prompt="🍺 Homebrew packages> " \
+      --preview "brew info {}" \
+      --query "$query" \
+      --bind "tab:toggle,esc:abort" \
+      --height 40% \
+      --min-height 15 \
+      --select-1 \
+      --exit-0)
+    
+    [[ -z "$selected_packages" ]] && return 1
+    # Convert newlines to spaces for brew install
+    brew install $(echo "$selected_packages" | tr '\n' ' ')
+    
   elif [[ -f /etc/os-release ]]; then
-    # Linux distributions
     . /etc/os-release
     case "$ID" in
       ubuntu|debian)
-        pkg=$(apt-cache search "$query" | fzf | awk '{print $1}')
-        [[ -z "$pkg" ]] && return 1
-        sudo apt install "$pkg"
+        # apt-cache shows "package-name - description"
+        selected_packages=$(apt-cache search "$query" | fzf \
+          --multi \
+          --prompt="🐧 APT packages> " \
+          --preview "apt-cache show {} | head -30" \
+          --query "$query" \
+          --bind "tab:toggle,esc:abort" \
+          --height 40% \
+          --min-height 15 \
+          --select-1 \
+          --exit-0)
+        
+        [[ -z "$selected_packages" ]] && return 1
+        # Extract package names and convert to space-separated
+        packages=$(echo "$selected_packages" | awk -F ' - ' '{print $1}' | tr '\n' ' ')
+        sudo apt install $packages
         ;;
       fedora|rhel|centos)
-        pkg=$(dnf search "$query" | fzf | awk '{print $1}')
-        [[ -z "$pkg" ]] && return 1
-        sudo dnf install -y "$pkg"
+        # dnf search shows "package.x86_64 description"
+        selected_packages=$(dnf search "$query" | fzf \
+          --multi \
+          --prompt="📦 DNF packages> " \
+          --preview "dnf info {}" \
+          --query "$query" \
+          --bind "tab:toggle,esc:abort" \
+          --height 40% \
+          --min-height 15 \
+          --select-1 \
+          --exit-0)
+        
+        [[ -z "$selected_packages" ]] && return 1
+        # Extract package names and convert to space-separated
+        packages=$(echo "$selected_packages" | awk '{print $1}' | cut -d. -f1 | tr '\n' ' ')
+        sudo dnf install -y $packages
         ;;
       arch|manjaro)
         if ! command -v paru &>/dev/null; then
           echo "Error: Paru not found. Install it or switch to 'pacman'."
           return 1
         fi
-        pkg=$(paru -Ss "$query" | fzf | awk '{print $2}')
-        [[ -z "$pkg" ]] && return 1
-        paru -S "$pkg"
+        # paru -Ss shows "repo/package - description"
+        selected_packages=$(paru -Ss "$query" | fzf \
+          --multi \
+          --prompt="🅰️  Paru packages> " \
+          --preview "paru -Si {}" \
+          --query "$query" \
+          --bind "tab:toggle,esc:abort" \
+          --height 40% \
+          --min-height 15 \
+          --select-1 \
+          --exit-0)
+        
+        [[ -z "$selected_packages" ]] && return 1
+        # Extract package names and convert to space-separated
+        packages=$(echo "$selected_packages" | awk '{print $2}' | cut -d'/' -f2 | tr '\n' ' ')
+        paru -S $packages
         ;;
       *)
         echo "Unsupported Linux distribution: $ID"
@@ -335,10 +386,6 @@ case `uname` in
     then
         alias bat="batcat"
         export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
-    fi
-    if command -v fdfind > /dev/null 2>&1
-    then
-        alias fd=fdfind
     fi
   ;;
   FreeBSD)
