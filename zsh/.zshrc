@@ -309,9 +309,6 @@ alias tsync='task sync'
 # SHELL ENHANCEMENTS
 # -----------------------------------------------------------------------------
 
-# Enable thefuck
-eval $(thefuck --alias)
-
 # Syntax highlighting for Cisco Devices
 ssh() { /usr/bin/ssh "$@" | ct; }
 
