@@ -55,7 +55,6 @@ shell-integration-features = cursor,sudo,title,no-cursor
 #: Keybindings {{{
 
 keybind = super+k=clear_screen
-keybind = ctrl+k=clear_screen
 keybind = super+shift+,=move_tab:-1
 keybind = super+shift+.=move_tab:1
 keybind = super+d=new_split:right
