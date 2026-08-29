@@ -1,0 +1,48 @@
+{
+  "Markdown Link": {
+    "prefix": "mlink",
+    "body": ["[${1:text}](${2:url})"],
+    "description": "Create markdown link [txt](url)"
+  },
+  "Markdown Code Wrap": {
+    "prefix": "mcwrap",
+    "body": ["``` ${1:Language}", "$TM_SELECTED_TEXT", "```"],
+    "description": "Create markdown code block from existing text"
+  },
+  "Markdown Code Empty": {
+    "prefix": "mcode",
+    "body": ["``` ${1:Language}", "${2:Content}", "```"],
+    "description": "Create empty markdown code block"
+  },
+  "Blog Post Metadata": {
+    "prefix": "blogpost",
+    "body": [
+      "---",
+      "title: ${1:note_title}",
+      "description: ${2:description}",
+      "date: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}",
+      "tags:",
+      "  - ${3:tag1}",
+      "layout: layouts/post.njk",
+      "---",
+      ""
+    ],
+    "description": "Metadata Header for new blog post"
+  },
+  "YAML Metadata": {
+    "prefix": "ymeta",
+    "body": [
+      "---",
+      "title: ${1:note_title}",
+      "author: ${2:author}",
+      "date: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}",
+      "categories: [${3:category}]",
+      "lastmod: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}",
+      "tags: [${4:tag}]",
+      "comments: true",
+      "---",
+      ""
+    ],
+    "description": "Yaml metadata format for markdown"
+  }
+}
