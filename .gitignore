@@ -11,6 +11,7 @@ btop/.config/btop/btop.conf
 # Neovim
 nvim/.config/nvim/plugin/packer_compiled.lua
 nvim/.config/nvim/lazy-lock.json
+lazyvim/.config/nvim/lazy-lock.json
 
 
 # Joplin
