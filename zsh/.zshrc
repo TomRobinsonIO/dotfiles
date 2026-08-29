@@ -263,10 +263,10 @@ pkgsearch() {
 # -----------------------------------------------------------------------------
 
 bindkey -s '^b' '^ubc -lq\n'
-bindkey -s '^e' '^ufzfedit\n'
+bindkey -s '^e' '^uyazicd\n'
 bindkey -s '^f' '^ucd "$(dirname "$(fzf)")"\n'
 bindkey -s '^g' '^ulazygit\n'
-bindkey -s '^o' '^uyazicd\n'
+bindkey -s '^n' '^ufzfedit\n'
 bindkey -s '^s' '^utermscp\n'
 
 # -----------------------------------------------------------------------------
