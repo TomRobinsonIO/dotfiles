@@ -159,7 +159,7 @@ function yazicd() {
 fzfedit () { fzf --preview "bat --style=numbers --color=always --line-range :500 {}" | xargs -r $EDITOR ;}
 
 # Package installer with fzf selection
-pkgsearch() {
+getpkg() {
   local query="$1"
   local selected_packages
   
