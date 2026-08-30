@@ -2,7 +2,7 @@
 
 #: Themes {{{
 
-theme = dankcolors
+theme = Catppuccin Mocha
 background-opacity = 0.9
 # theme = gruvbox dark
 # theme = nord
