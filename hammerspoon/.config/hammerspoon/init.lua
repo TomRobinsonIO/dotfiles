@@ -59,36 +59,48 @@ PaperWM:bindHotkeys({
 	focus_window_last = { { "cmd", "shift" }, "end" },
 
 	-- switch to a new Mission Control space
-	switch_recent_space = { { "ctrl", "alt", "cmd" }, "6" },
-	switch_space_l = { { "alt", "cmd" }, "," },
-	switch_space_r = { { "alt", "cmd" }, "." },
-	switch_space_1 = { { "alt", "cmd" }, "1" },
-	switch_space_2 = { { "alt", "cmd" }, "2" },
-	switch_space_3 = { { "alt", "cmd" }, "3" },
-	switch_space_4 = { { "alt", "cmd" }, "4" },
-	switch_space_5 = { { "alt", "cmd" }, "5" },
-	switch_space_6 = { { "alt", "cmd" }, "6" },
-	switch_space_7 = { { "alt", "cmd" }, "7" },
-	switch_space_8 = { { "alt", "cmd" }, "8" },
-	switch_space_9 = { { "alt", "cmd" }, "9" },
+	-- switch_recent_space = { { "ctrl", "alt", "cmd" }, "6" },
+	-- switch_space_l = { { "alt", "cmd" }, "," },
+	-- switch_space_r = { { "alt", "cmd" }, "." },
+	-- switch_space_1 = { { "alt" }, "1" },
+	-- switch_space_2 = { { "alt" }, "2" },
+	-- switch_space_3 = { { "alt" }, "3" },
+	-- switch_space_4 = { { "alt" }, "4" },
+	-- switch_space_5 = { { "alt" }, "5" },
+	-- switch_space_6 = { { "alt" }, "6" },
+	-- switch_space_7 = { { "alt" }, "7" },
+	-- switch_space_8 = { { "alt" }, "8" },
+	-- switch_space_9 = { { "alt" }, "9" },
 
 	-- move focused window to a new space and tile
 	move_window_l = { { "ctrl", "alt", "cmd" }, "left" },
 	move_window_r = { { "ctrl", "alt", "cmd" }, "right" },
 	move_window_u = { { "ctrl", "alt", "cmd" }, "up" },
 	move_window_d = { { "ctrl", "alt", "cmd" }, "down" },
-	move_window_1 = { { "alt", "cmd", "shift" }, "1" },
-	move_window_2 = { { "alt", "cmd", "shift" }, "2" },
-	move_window_3 = { { "alt", "cmd", "shift" }, "3" },
-	move_window_4 = { { "alt", "cmd", "shift" }, "4" },
-	move_window_5 = { { "alt", "cmd", "shift" }, "5" },
-	move_window_6 = { { "alt", "cmd", "shift" }, "6" },
-	move_window_7 = { { "alt", "cmd", "shift" }, "7" },
-	move_window_8 = { { "alt", "cmd", "shift" }, "8" },
-	move_window_9 = { { "alt", "cmd", "shift" }, "9" },
+	move_window_1 = { { "alt", "shift" }, "1" },
+	move_window_2 = { { "alt", "shift" }, "2" },
+	move_window_3 = { { "alt", "shift" }, "3" },
+	move_window_4 = { { "alt", "shift" }, "4" },
+	move_window_5 = { { "alt", "shift" }, "5" },
+	move_window_6 = { { "alt", "shift" }, "6" },
+	move_window_7 = { { "alt", "shift" }, "7" },
+	move_window_8 = { { "alt", "shift" }, "8" },
+	move_window_9 = { { "alt", "shift" }, "9" },
 
 	-- refresh/retile windows (forcedly)
 	refresh_windows = { { "alt", "cmd", "shift" }, "r" },
 	refresh_windows_forcedly = { { "alt", "cmd", "shift" }, "t" },
 })
 PaperWM:start()
+
+hs.hotkey.bind({ "alt" }, "b", function()
+	hs.application.launchOrFocus("Brave Browser")
+end)
+
+hs.hotkey.bind({ "alt" }, "return", function()
+	hs.application.launchOrFocus("Ghostty")
+end)
+
+hs.hotkey.bind({ "alt" }, "e", function()
+	hs.application.launchOrFocus("Finder")
+end)
