@@ -44,15 +44,15 @@ PaperWM:bindHotkeys({
 	focus_floating = { { "alt", "cmd", "shift" }, "f" },
 
 	-- focus the first / second / etc window in the current space
-	focus_window_1 = { { "cmd", "shift" }, "1" },
-	focus_window_2 = { { "cmd", "shift" }, "2" },
-	focus_window_3 = { { "cmd", "shift" }, "3" },
-	focus_window_4 = { { "cmd", "shift" }, "4" },
-	focus_window_5 = { { "cmd", "shift" }, "5" },
-	focus_window_6 = { { "cmd", "shift" }, "6" },
-	focus_window_7 = { { "cmd", "shift" }, "7" },
-	focus_window_8 = { { "cmd", "shift" }, "8" },
-	focus_window_9 = { { "cmd", "shift" }, "9" },
+	focus_window_1 = { { "alt", "cmd", "shift" }, "1" },
+	focus_window_2 = { { "alt", "cmd", "shift" }, "2" },
+	focus_window_3 = { { "alt", "cmd", "shift" }, "3" },
+	focus_window_4 = { { "alt", "cmd", "shift" }, "4" },
+	focus_window_5 = { { "alt", "cmd", "shift" }, "5" },
+	focus_window_6 = { { "alt", "cmd", "shift" }, "6" },
+	focus_window_7 = { { "alt", "cmd", "shift" }, "7" },
+	focus_window_8 = { { "alt", "cmd", "shift" }, "8" },
+	focus_window_9 = { { "alt", "cmd", "shift" }, "9" },
 
 	-- focus the leftmost / rightmost window in the current space
 	focus_window_first = { { "cmd", "shift" }, "home" },
