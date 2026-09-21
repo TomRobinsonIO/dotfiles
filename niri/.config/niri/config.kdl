@@ -271,6 +271,7 @@ window-rule {
 }
 window-rule {
   match app-id="steam"
+  match app-id="gamescope"
   open-on-workspace "games"
 }
 window-rule {
