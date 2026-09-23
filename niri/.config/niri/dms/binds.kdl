@@ -6,7 +6,7 @@ binds {
 
     // === Application Launchers ===
     Mod+Return hotkey-overlay-title="Open Terminal" { spawn "ghostty"; }
-    Mod+B hotkey-overlay-title="Open Browser" { spawn "brave-browser"; }
+    Mod+B hotkey-overlay-title="Open Browser" { spawn-sh "flatpak run app.zen_browser.zen"; }
     Mod+T hotkey-overlay-title="Open Files" { spawn "nautilus"; }
     Mod+Space hotkey-overlay-title="Application Launcher" {
         spawn "dms" "ipc" "call" "spotlight" "toggle";
