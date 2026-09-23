@@ -1,0 +1,33 @@
+#!/bin/bash
+# Calculate macOS installation age using Setup Assistant marker
+
+current_time=$(date +%s)
+
+if [[ "$(uname)" == "Darwin" ]]; then
+  setup_marker="/var/db/.AppleSetupDone"
+
+  if [[ -f "$setup_marker" ]]; then
+    setup_time=$(stat -f %B "$setup_marker")
+    setup_date=$(date -r "$setup_time" "+%Y-%m-%d %H:%M:%S")
+
+    # Verify it's a reasonable date (after 2010 for modern macOS)
+    if [[ "$setup_time" -lt 1262304000 ]]; then # Before Jan 1, 2010
+      echo "ERROR: Timestamp predates modern macOS"
+      exit 1
+    fi
+
+    age_seconds=$((current_time - setup_time))
+    age_days=$((age_seconds / 86400))
+
+    echo "$age_days days"
+  else
+    echo "ERROR: Setup Assistant marker not found"
+    echo "This may indicate a fresh install or corrupted system"
+    exit 1
+  fi
+else
+  # Linux fallback
+  boot_time=$(stat -c %W /)
+  age_days=$(((current_time - boot_time) / 86400))
+  echo "$age_days days"
+fi
