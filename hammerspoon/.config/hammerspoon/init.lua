@@ -1,16 +1,5 @@
 hs.loadSpoon("SpoonInstall")
-
-spoon.SpoonInstall.repos.WarpMouse = {
-	url = "https://github.com/mogenson/WarpMouse.spoon",
-	desc = "WarpMouse.spoon repository",
-}
-
-spoon.SpoonInstall:andUse("WarpMouse", {
-	repo = "WarpMouse",
-	config = { margin = 2, reverseScreens = false },
-	start = true,
-})
-
+spoon.SpoonInstall.use_syncinstall = true
 spoon.SpoonInstall.repos.PaperWM = {
 	url = "https://github.com/mogenson/PaperWM.spoon",
 	desc = "PaperWM.spoon repository",
@@ -114,6 +103,12 @@ spoon.SpoonInstall:andUse("PaperWM", {
 		refresh_windows_forcedly = { { "alt", "cmd", "shift" }, "t" },
 	},
 })
+
+WarpMouse = hs.loadSpoon("WarpMouse")
+WarpMouse.margin = 2 -- optionally set how far past a screen edge the mouse should warp, default is 2 pixels
+WarpMouse.reverseScreens = true -- optionally set to warp from bottom to top instead of top to bottom, default is false
+WarpMouse:start()
+
 hs.hotkey.bind({ "alt" }, "b", function()
 	hs.application.launchOrFocus("Brave Browser")
 end)
