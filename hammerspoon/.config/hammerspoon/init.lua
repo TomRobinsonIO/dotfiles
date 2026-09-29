@@ -8,7 +8,7 @@ spoon.SpoonInstall.repos.PaperWM = {
 
 spoon.SpoonInstall:andUse("PaperWM", {
 	repo = "PaperWM",
-	config = { screen_margin = 16, window_gap = 2 },
+	config = { screen_margin = 16, window_gap = 2, window_ratios = { 1 / 3, 1 / 2, 2 / 3 } },
 	start = true,
 	hotkeys = {
 		-- switch to a new focused window in tiled grid
