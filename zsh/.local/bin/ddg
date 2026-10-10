@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+if [[ $# -eq 0 ]]; then
+  echo "Usage: ddg <search query>" >&2
+  exit 1
+fi
+
+# Join arguments with spaces, encode each word with + for spaces
+query=$(printf '%s' "$*" | python3 -c "import sys, urllib.parse; print(urllib.parse.quote_plus(sys.stdin.read()))")
+
+# Open in w3m
+w3m "https://duckduckgo.com/?q=${query}"
