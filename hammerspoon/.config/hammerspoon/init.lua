@@ -110,7 +110,7 @@ WarpMouse.reverseScreens = true -- optionally set to warp from bottom to top ins
 WarpMouse:start()
 
 hs.hotkey.bind({ "alt" }, "b", function()
-	hs.application.launchOrFocus("Brave Browser")
+	hs.application.launchOrFocus("Firefox")
 end)
 
 hs.hotkey.bind({ "alt" }, "return", function()
