@@ -40,3 +40,4 @@ taskwarrior/.config/task/certs
 # Ghostty
 ghostty/.config/ghostty/themes/
 /niri/.config/niri/dms/binds-next.kdl
+/niri/.config/niri/config.kdl
