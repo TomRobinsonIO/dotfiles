@@ -277,10 +277,10 @@ window-rule {
 window-rule {
     match app-id=r#"^org\.wezfurlong\.wezterm$"#
     match app-id="Alacritty"
-    match app-id="zen"
     match app-id="com.mitchellh.ghostty"
     match app-id="kitty"
     draw-border-with-background false
+    open-maximized true
     open-on-workspace "terminal"
 }
 window-rule {
@@ -293,6 +293,7 @@ window-rule {
   match app-id="app.zen_browser.zen"
   match app-id="brave-browser"
   open-on-workspace "browser"
+  open-maximized true
 }
 window-rule {
   match app-id="cider"
