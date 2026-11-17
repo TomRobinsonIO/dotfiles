@@ -1,6 +1,6 @@
 # dotfiles
 
-Arch & MacOS Config Files
+Linux & MacOS Config Files
 
 ## Packages
 
