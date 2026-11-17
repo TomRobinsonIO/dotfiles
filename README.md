@@ -1,14 +1,15 @@
 # dotfiles
+
 Arch & MacOS Config Files
 
 ## Packages
 
-| Type                  | Name                     |
-|-----------------------|--------------------------|
-| OS                    | Arch/MacOS               |
-| Shell                 | zsh                      |
-| Terminal              | Alacritty                |
-| Terminal Multiplexer  | tmux                     |
-| Editor                | Neovim                   |
-| Colorscheme           | Catppuccin               |
-| Font                  | Hack Nerd Font           |
+| Type                 | Name                |
+| -------------------- | ------------------- |
+| OS                   | Fedora/MacOS        |
+| Shell                | zsh                 |
+| Terminal             | Ghostty             |
+| Terminal Multiplexer | tmux                |
+| Editor               | Neovim              |
+| Colorscheme          | Catppuccin          |
+| Font                 | Fira Code Nerd Font |
