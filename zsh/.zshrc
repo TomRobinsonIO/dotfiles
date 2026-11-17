@@ -36,9 +36,6 @@ export PATH="$HOME/.local/bin/:$PATH"
 # Set GOPATH
 export GOPATH="$HOME/.local/"
 
-# Set w3m Path
-W3M_DIR="$XDG_CONFIG_HOME/w3m/"
-
 # Proton Pass SSH Agent
 export SSH_AUTH_SOCK=$HOME/.ssh/proton-pass-agent.sock
 
