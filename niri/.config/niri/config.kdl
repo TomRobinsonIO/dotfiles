@@ -296,6 +296,10 @@ window-rule {
   open-maximized true
 }
 window-rule {
+  match app-id="lumo"
+  open-on-workspace "seven"
+}
+window-rule {
   match app-id="cider"
   open-on-workspace "media"
 }
